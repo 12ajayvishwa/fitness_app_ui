@@ -1,4 +1,6 @@
+import 'package:fitness_ui/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 double sizeH1 = 26; 
 double sizeH2 = 24;
@@ -7,8 +9,8 @@ double sizeH4 = 20;
 double sizeTextSub = 18;
 double largeTextSize = 16;
 double mediumTextSize = 14;
-double smallTextSize = 14;
-double captionTextSize = 14;
+double smallTextSize = 12;
+double captionTextSize = 10;
 
 
 
@@ -58,7 +60,7 @@ var kMediumTextRegular = TextStyle(fontFamily: "Poppins",fontSize: mediumTextSiz
 //Small text
 var kSmallTextBold = TextStyle(fontFamily: "Poppins",fontSize: smallTextSize,fontWeight: FontWeight.bold);
 var kSmallTextSemiBold = TextStyle(fontFamily: "Poppins",fontSize: smallTextSize,fontWeight: FontWeight.w600);
-var kSmallTextMedium = TextStyle(fontFamily: "Poppins",fontSize: smallTextSize,fontWeight: FontWeight.w500);
+var kSmallTextMedium = TextStyle(fontFamily: "Poppins",fontSize: smallTextSize,fontWeight: FontWeight.w500,color: Colors.white);
 var kSmallTextRegular = TextStyle(fontFamily: "Poppins",fontSize: smallTextSize);
 
 //Caption text
