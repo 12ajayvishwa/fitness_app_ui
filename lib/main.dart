@@ -1,6 +1,4 @@
-import 'package:fitness_ui/home.dart';
 import 'package:flutter/material.dart';
-
 import 'screens/onboarding_screen.dart';
 
 void main() {

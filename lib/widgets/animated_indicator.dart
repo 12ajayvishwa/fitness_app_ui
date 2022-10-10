@@ -6,15 +6,17 @@ import 'dart:ui' as ui;
 class AnimatedIndicator extends StatefulWidget {
   final Duration duration;
   final double size;
+  final double curveSize;
   final VoidCallback callback;
   const AnimatedIndicator(
       {Key? key,
       required this.duration,
       required this.size,
-      required this.callback})
+      required this.callback, required this.curveSize})
       : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _AnimatedIndicatorState createState() => _AnimatedIndicatorState();
 }
 
@@ -53,7 +55,7 @@ class _AnimatedIndicatorState extends State<AnimatedIndicator>
         builder: (context, child) {
           return CustomPaint(
             size: Size(widget.size, widget.size),
-            painter: ProgressPainter(animation!.value),
+            painter: ProgressPainter(widget.curveSize),
           );
         });
   }
@@ -69,15 +71,15 @@ class ProgressPainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = 3
       ..shader = ui.Gradient.linear(
-        Offset(0, 10),
-        Offset(10, 0),
+        const Offset(0, 10),
+        const Offset(10, 0),
         [kBrandColor1, kBrandColor2],
       );
     var circlePaint = Paint()
       ..style = PaintingStyle.fill
       ..shader = ui.Gradient.linear(
-        Offset(0, 10),
-        Offset(10, 0),
+        const Offset(0, 10),
+        const Offset(10, 0),
         [kBrandColor1, kBrandColor2],
       );
 
@@ -96,5 +98,6 @@ class ProgressPainter extends CustomPainter {
   }
 
   @override
+  // ignore: avoid_renaming_method_parameters
   bool shouldRepaint(CustomPainter old) => true;
 }
