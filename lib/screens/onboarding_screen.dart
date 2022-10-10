@@ -84,7 +84,7 @@ class ProgressButton extends StatelessWidget {
         width: 75,
         child: Stack(
           children: [
-            AnimatedIndicaor(
+            AnimatedIndicator(
             duration:const Duration(seconds: 10),
             size:75,
             callback:onNext
