@@ -32,7 +32,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: const Color(0xFFFFFFFF),
+      backgroundColor: Color(0xFFFFFFFF),
       bottomNavigationBar: CustomBottomNavBar(
         size: size,
         svgIcon1: pageIndex == 0
@@ -137,7 +137,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             shaderCallback: (Rect bounds) {
-              Rect rect = const Rect.fromLTRB(0, 0, 30, 30);
+              final Rect rect = Rect.fromLTRB(0, 0, 30, 30);
               return const LinearGradient(
                       colors: [kSecondryColor1, kSecondryColor2],
                       begin: Alignment.bottomRight,
