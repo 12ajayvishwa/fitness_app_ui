@@ -1,6 +1,8 @@
 import 'package:fitness_ui/utils/buttons/secondary_button.dart';
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:fitness_ui/utils/text_style.dart';
+import 'package:fitness_ui/widgets/banner_components/home_banner.dart';
+import 'package:fitness_ui/widgets/banner_components/progress_photo_banner.dart';
 import 'package:fitness_ui/widgets/custom_nav_bar.dart';
 import 'package:fitness_ui/widgets/custom_text_input_field.dart';
 import 'package:fitness_ui/widgets/lable_button.dart';
@@ -11,6 +13,7 @@ import 'package:flutter_svg/svg.dart';
 import 'utils/buttons/add_camera_button.dart';
 import 'utils/buttons/auth_button.dart';
 import 'utils/buttons/onboarding_button.dart';
+import 'widgets/banner_components/sleep_banner.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -74,29 +77,31 @@ class _HomeState extends State<Home> {
         child: Column(
           children: [
             Center(
-              child: Container(
-                height: 500,
-                width: 500,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    gradient: const LinearGradient(
-                        colors: [kSecondryColor1, kSecondryColor2])),
-                child: Column(children: [
-                  Text("Hello everyone!", style: kTitleH2Bold),
-                  Text("Hello everyone!", style: kTitleH2SemiBold),
-                  Text("Hello everyone!", style: kTitleH2Medium),
-                  Text("Hello everyone!", style: kTitleH2Regular),
-                  const CustomTextFormField(),
-                  SearchNav(onTap: (){},size: size,text1: "Workout Tracker",text2: "Meal Planner",text3: "Sleep Tracker",),
-                  
-                ]),
-              ),
+              child: Column(children: [
+                SearchNav(onTap: (){},size: size,text1: "Workout Tracker",text2: "Meal Planner",text3: "Sleep Tracker",),
+                
+              ]),
             ),
             const SizedBox(
-              height: 15,
+              height: 10,
+            ),
+            HomeBanner(size: size),
+            const SizedBox(
+              height: 10,
+            ),
+            SleepBanner(size:size),
+            const SizedBox(
+              height: 10,
+            ),
+            ProgressPhotoBanner(size:size),
+            const SizedBox(
+              height: 10,
             ),
             const LableButton(
               text: "KG",
+            ),
+            const SizedBox(
+              height: 10,
             ),
             AuthButton(size: size,text: "Next",onTap: (){},),
             const SizedBox(height: 10,),

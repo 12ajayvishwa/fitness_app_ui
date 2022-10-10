@@ -13,18 +13,15 @@ class SecondaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: size.height * 0.05,
-        width: size.width * 0.25,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(50),
-            gradient: const LinearGradient(
-                begin: Alignment.centerRight,
-                end: Alignment.centerLeft,
-                colors: [kSecondryColor1, kSecondryColor2])),
-        child: Center(
-            child: Text(
-          text,
-          style: kCaptionTextSemiBold,
-        )));
+      height: size.height * 0.05,
+      width: size.width * 0.25,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(50),
+          gradient: const LinearGradient(
+              begin: Alignment.centerRight,
+              end: Alignment.centerLeft,
+              colors: [kSecondryColor1, kSecondryColor2])),
+      child: Center(child: Text(text, style: kCaptionTextSemiBold)),
+    );
   }
 }
