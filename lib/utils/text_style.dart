@@ -44,7 +44,7 @@ var kTextSubMedium = TextStyle(fontFamily: "Poppins",fontSize: sizeTextSub,fontW
 var kTextSubRegular = TextStyle(fontFamily: "Poppins",fontSize: sizeTextSub);
 
 //Large text
-var kLargeTextBold = TextStyle(fontFamily: "Poppins",fontSize: largeTextSize,fontWeight: FontWeight.bold);
+var kLargeTextBold = TextStyle(fontFamily: "Poppins",fontSize: largeTextSize,fontWeight: FontWeight.bold,color: Colors.white);
 var kLargeTextSemiBold = TextStyle(fontFamily: "Poppins",fontSize: largeTextSize,fontWeight: FontWeight.w600);
 var kLargeTextMedium = TextStyle(fontFamily: "Poppins",fontSize: largeTextSize,fontWeight: FontWeight.w500);
 var kLargeTextRegular = TextStyle(fontFamily: "Poppins",fontSize: largeTextSize);
@@ -59,11 +59,11 @@ var kMediumTextRegular = TextStyle(fontFamily: "Poppins",fontSize: mediumTextSiz
 var kSmallTextBold = TextStyle(fontFamily: "Poppins",fontSize: smallTextSize,fontWeight: FontWeight.bold);
 var kSmallTextSemiBold = TextStyle(fontFamily: "Poppins",fontSize: smallTextSize,fontWeight: FontWeight.w600);
 var kSmallTextMedium = TextStyle(fontFamily: "Poppins",fontSize: smallTextSize,fontWeight: FontWeight.w500,color: Colors.white);
-var kSmallTextRegular = TextStyle(fontFamily: "Poppins",fontSize: smallTextSize);
+var kSmallTextRegular = TextStyle(fontFamily: "Poppins",fontSize: smallTextSize,color: Colors.black);
 
 //Caption text
 var kCaptionTextBold = TextStyle(fontFamily: "Poppins",fontSize: captionTextSize,fontWeight: FontWeight.bold);
-var kCaptionTextSemiBold = TextStyle(fontFamily: "Poppins",fontSize: captionTextSize,fontWeight: FontWeight.w600);
+var kCaptionTextSemiBold = TextStyle(fontFamily: "Poppins",fontSize: captionTextSize,fontWeight: FontWeight.w600,color: Colors.white);
 var kCaptionTextMedium = TextStyle(fontFamily: "Poppins",fontSize: captionTextSize,fontWeight: FontWeight.w500);
 var kCaptionTextRegular = TextStyle(fontFamily: "Poppins",fontSize: captionTextSize);
 

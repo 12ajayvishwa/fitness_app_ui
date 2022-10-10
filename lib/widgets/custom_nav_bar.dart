@@ -21,7 +21,7 @@ class CustomBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(alignment: Alignment.center, children: [
-      Container(
+      SizedBox(
         height: size.height * 0.13,
         width: size.width,
       ),
@@ -34,7 +34,7 @@ class CustomBottomNavBar extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
+                SizedBox(
                   width: size.width / 2.5,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -57,7 +57,7 @@ class CustomBottomNavBar extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
+                SizedBox(
                   width: size.width / 2.5,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -84,11 +84,12 @@ class CustomBottomNavBar extends StatelessWidget {
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 gradient:
-                    const LinearGradient(colors: [kBrandColor2, kBrandColor1]),
+                    const LinearGradient(
+                      colors: [kBrandColor2, kBrandColor1]),
                 boxShadow: [
                   BoxShadow(
                       color: const Color(0xFF95ADFE).withOpacity(0.3),
-                      offset: Offset(0, 10),
+                      offset: const Offset(0, 10),
                       blurRadius: 10,
                       spreadRadius: 5)
                 ]),

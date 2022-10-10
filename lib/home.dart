@@ -1,10 +1,16 @@
+import 'package:fitness_ui/utils/buttons/secondary_button.dart';
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:fitness_ui/utils/text_style.dart';
 import 'package:fitness_ui/widgets/custom_nav_bar.dart';
 import 'package:fitness_ui/widgets/custom_text_input_field.dart';
 import 'package:fitness_ui/widgets/lable_button.dart';
+import 'package:fitness_ui/widgets/search_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import 'utils/buttons/add_camera_button.dart';
+import 'utils/buttons/auth_button.dart';
+import 'utils/buttons/onboarding_button.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -26,7 +32,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xFFFFFFFF),
+      backgroundColor: const Color(0xFFFFFFFF),
       bottomNavigationBar: CustomBottomNavBar(
         size: size,
         svgIcon1: pageIndex == 0
@@ -64,32 +70,44 @@ class _HomeState extends State<Home> {
           });
         },
       ),
-      body: Column(
-        children: [
-          Center(
-            child: Container(
-              height: 500,
-              width: 500,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  gradient: const LinearGradient(
-                      colors: [kSecondryColor1, kSecondryColor2])),
-              child: Column(children: [
-                Text("Hello everyone!", style: kTitleH2Bold),
-                Text("Hello everyone!", style: kTitleH2SemiBold),
-                Text("Hello everyone!", style: kTitleH2Medium),
-                Text("Hello everyone!", style: kTitleH2Regular),
-                const CustomTextFormField(),
-              ]),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Center(
+              child: Container(
+                height: 500,
+                width: 500,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    gradient: const LinearGradient(
+                        colors: [kSecondryColor1, kSecondryColor2])),
+                child: Column(children: [
+                  Text("Hello everyone!", style: kTitleH2Bold),
+                  Text("Hello everyone!", style: kTitleH2SemiBold),
+                  Text("Hello everyone!", style: kTitleH2Medium),
+                  Text("Hello everyone!", style: kTitleH2Regular),
+                  const CustomTextFormField(),
+                  SearchNav(onTap: (){},size: size,text1: "Workout Tracker",text2: "Meal Planner",text3: "Sleep Tracker",),
+                  
+                ]),
+              ),
             ),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          const LableButton(
-            text: "KG",
-          ),
-        ],
+            const SizedBox(
+              height: 15,
+            ),
+            const LableButton(
+              text: "KG",
+            ),
+            AuthButton(size: size,text: "Next",onTap: (){},),
+            const SizedBox(height: 10,),
+            SecondaryButton(size: size, text: "Button", onTap: (){}),
+             const SizedBox(height: 10,),
+            AddCameraButton(size: size,svgPicture: "assets/icons/light/Plus.svg"),
+            OnBoardingButton(onNext: () {
+              
+            },)
+          ],
+        ),
       ),
     );
   }
@@ -119,11 +137,11 @@ class _HomeState extends State<Home> {
               ),
             ),
             shaderCallback: (Rect bounds) {
-              final Rect rect = Rect.fromLTRB(0, 0, 30, 30);
+              Rect rect = const Rect.fromLTRB(0, 0, 30, 30);
               return const LinearGradient(
                       colors: [kSecondryColor1, kSecondryColor2],
-                      begin: Alignment.topRight,
-                      end: Alignment.bottomLeft)
+                      begin: Alignment.bottomRight,
+                      end: Alignment.topLeft)
                   .createShader(rect);
             }),
         const SizedBox(
@@ -138,7 +156,8 @@ class _HomeState extends State<Home> {
                   colors: [kSecondryColor2, kSecondryColor1],
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft)),
-        )
+        ),
+        
       ],
     );
   }
