@@ -26,7 +26,7 @@ final VoidCallback? onTap;
             top: 26,
             left: 20,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("BMI (Body Mass Index)",style: kMediumTextSemiBold,),
                 const SizedBox(height: 5,),
@@ -39,7 +39,7 @@ final VoidCallback? onTap;
               bottom: 0,
               child: Container(
                 height: size.height*0.6,
-                width: size.width*0.5,
+                width: size.width*0.45,
                 decoration: const BoxDecoration(
                   image: DecorationImage(image: AssetImage("assets/images/Banner-Pie.png",),fit: BoxFit.cover)
                 ),

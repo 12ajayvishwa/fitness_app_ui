@@ -2,7 +2,9 @@ import 'package:fitness_ui/utils/buttons/secondary_button.dart';
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:fitness_ui/utils/text_style.dart';
 import 'package:fitness_ui/widgets/banner_components/home_banner.dart';
+import 'package:fitness_ui/widgets/banner_components/photos_reminder_banner.dart';
 import 'package:fitness_ui/widgets/banner_components/progress_photo_banner.dart';
+import 'package:fitness_ui/widgets/banner_components/sleep_schedule_banner.dart';
 import 'package:fitness_ui/widgets/custom_nav_bar.dart';
 import 'package:fitness_ui/widgets/custom_text_input_field.dart';
 import 'package:fitness_ui/widgets/lable_button.dart';
@@ -14,6 +16,7 @@ import 'utils/buttons/add_camera_button.dart';
 import 'utils/buttons/auth_button.dart';
 import 'utils/buttons/onboarding_button.dart';
 import 'widgets/banner_components/sleep_banner.dart';
+import 'widgets/banner_components/today_target_banner.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -85,6 +88,18 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 10,
             ),
+            SleepScheduleBanner(size:size),
+            const SizedBox(
+              height: 10,
+            ),
+            PhotoRemiderBanner(size:size,date: "July 20",),
+            const SizedBox(
+              height: 10,
+            ),
+            TodayTargetBanner(size:size),
+            const SizedBox(
+              height: 10,
+            ),
             HomeBanner(size: size),
             const SizedBox(
               height: 10,
@@ -97,6 +112,7 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 10,
             ),
+            
             const LableButton(
               text: "KG",
             ),
