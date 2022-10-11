@@ -5,6 +5,8 @@ import 'package:fitness_ui/widgets/banner_components/home_banner.dart';
 import 'package:fitness_ui/widgets/banner_components/photos_reminder_banner.dart';
 import 'package:fitness_ui/widgets/banner_components/progress_photo_banner.dart';
 import 'package:fitness_ui/widgets/banner_components/sleep_schedule_banner.dart';
+import 'package:fitness_ui/widgets/card_components/latest_workout_card.dart';
+import 'package:fitness_ui/widgets/card_components/upcoming_workout_card.dart';
 import 'package:fitness_ui/widgets/custom_nav_bar.dart';
 import 'package:fitness_ui/widgets/custom_text_input_field.dart';
 import 'package:fitness_ui/widgets/lable_button.dart';
@@ -27,6 +29,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int pageIndex = 0;
+  bool status = false;
 
   final pages = [
     const Icon(Icons.abc),
@@ -81,22 +84,51 @@ class _HomeState extends State<Home> {
           children: [
             Center(
               child: Column(children: [
-                SearchNav(onTap: (){},size: size,text1: "Workout Tracker",text2: "Meal Planner",text3: "Sleep Tracker",),
-                
+                SearchNav(
+                  onTap: () {},
+                  size: size,
+                  text1: "Workout Tracker",
+                  text2: "Meal Planner",
+                  text3: "Sleep Tracker",
+                ),
               ]),
             ),
             const SizedBox(
               height: 10,
             ),
-            SleepScheduleBanner(size:size),
+            UpcomingWorkoutCard(
+              size: size,
+              
+              status: status,
+              image: "assets/images/Workout-Pic1.svg",
+              onChanged: (value) {
+                setState(() {
+                  status = value;
+                });
+              },
+            ),
             const SizedBox(
               height: 10,
             ),
-            PhotoRemiderBanner(size:size,date: "July 20",),
+            LatestWorkoutCard(
+              size: size,
+              image: "assets/images/Workout-Pic.svg",
+            ),
             const SizedBox(
               height: 10,
             ),
-            TodayTargetBanner(size:size),
+            SleepScheduleBanner(size: size),
+            const SizedBox(
+              height: 10,
+            ),
+            PhotoRemiderBanner(
+              size: size,
+              date: "July 20",
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            TodayTargetBanner(size: size),
             const SizedBox(
               height: 10,
             ),
@@ -104,29 +136,37 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 10,
             ),
-            SleepBanner(size:size),
+            SleepBanner(size: size),
             const SizedBox(
               height: 10,
             ),
-            ProgressPhotoBanner(size:size),
+            ProgressPhotoBanner(size: size),
             const SizedBox(
               height: 10,
             ),
-            
             const LableButton(
               text: "KG",
             ),
             const SizedBox(
               height: 10,
             ),
-            AuthButton(size: size,text: "Next",onTap: (){},),
-            const SizedBox(height: 10,),
-            SecondaryButton(size: size, text: "Button", onTap: (){}),
-             const SizedBox(height: 10,),
-            AddCameraButton(size: size,svgPicture: "assets/icons/light/Plus.svg"),
-            OnBoardingButton(onNext: () {
-              
-            },)
+            AuthButton(
+              size: size,
+              text: "Next",
+              onTap: () {},
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            SecondaryButton(size: size, text: "Button", onTap: () {}),
+            const SizedBox(
+              height: 10,
+            ),
+            AddCameraButton(
+                size: size, svgPicture: "assets/icons/light/Plus.svg"),
+            OnBoardingButton(
+              onNext: () {},
+            )
           ],
         ),
       ),
@@ -178,7 +218,6 @@ class _HomeState extends State<Home> {
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft)),
         ),
-        
       ],
     );
   }

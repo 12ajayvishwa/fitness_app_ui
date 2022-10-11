@@ -24,7 +24,7 @@ class LableButton extends StatelessWidget {
       child: Center(
         child: Text(
           text,
-          style: kSmallTextMedium,
+          style: kSmallTextMedium(Colors.white),
         ),
       ),
     );
