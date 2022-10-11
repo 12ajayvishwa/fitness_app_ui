@@ -19,6 +19,7 @@ import 'utils/buttons/auth_button.dart';
 import 'utils/buttons/onboarding_button.dart';
 import 'widgets/banner_components/sleep_banner.dart';
 import 'widgets/banner_components/today_target_banner.dart';
+import 'widgets/graphics_modal_banner/workout_increase.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -93,6 +94,10 @@ class _HomeState extends State<Home> {
                 ),
               ]),
             ),
+            const SizedBox(
+              height: 10,
+            ),
+            WorkoutIncrease(size:size),
             const SizedBox(
               height: 10,
             ),

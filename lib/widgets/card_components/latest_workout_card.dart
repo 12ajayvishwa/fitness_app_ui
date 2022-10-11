@@ -7,6 +7,8 @@ import 'package:getwidget/getwidget.dart';
 import 'package:gradient_progress_bar/gradient_progress_bar.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
+import '../progress_bar.dart';
+
 class LatestWorkoutCard extends StatefulWidget {
   final Size size;
   final String? image;
@@ -92,21 +94,10 @@ class _LatestWorkoutCardState extends State<LatestWorkoutCard> {
                           ],
                         ),
                       ),
-                    Positioned(
+                    const Positioned(
                       bottom: 0,
                       left: 7,
-                      child: GFProgressBar(
-                       width: 191.0,
-                       lineHeight: 10.0,
-                      animation: true,
-                      percentage: 0.8,
-                      animationDuration: 1500,
-                      radius: 50,
-                      backgroundColor: const Color(0xFFF7F8F8),
-                      linearGradient: const LinearGradient(colors: [
-                        Color(0xFFC58BF2),Color(0xFF92A3FD)
-                      ]),
-                      )
+                      child: ProgressBar(percent: 0.8,)
                       
                       // LinearPercentIndicator(
                       //   width: 191.0,
@@ -148,3 +139,5 @@ class _LatestWorkoutCardState extends State<LatestWorkoutCard> {
     );
   }
 }
+
+
