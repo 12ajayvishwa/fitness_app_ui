@@ -19,6 +19,7 @@ import 'package:flutter_svg/svg.dart';
 import 'utils/buttons/add_camera_button.dart';
 import 'utils/buttons/auth_button.dart';
 import 'utils/buttons/onboarding_button.dart';
+import 'widgets/activity_time_line.dart';
 import 'widgets/banner_components/sleep_banner.dart';
 import 'widgets/banner_components/today_target_banner.dart';
 import 'widgets/daily_action.dart';
@@ -103,144 +104,7 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 10,
             ),
-            WorkoutScheduleModal(size: size,color: kGrayColor3,),
-             const SizedBox(
-              height: 10,
-            ),
-             WorkoutScheduleModal(size: size,color: kFaildColor,remainingTime: "4h ago",),
-
-            const SizedBox(
-              height: 10,
-            ),
-            WorkoutIncrease(size: size),
-            const SizedBox(
-              height: 10,
-            ),
-            Meals(
-              size: size,
-              title: "fibre",
-              percent: 91,
-              path: "assets/icons/light/Arrow - Up.svg",
-              color: kSuccessColor,
-              progressPercent: 0.8,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Meals(
-              size: size,
-              title: "fats",
-              percent: 45,
-              path: "assets/icons/light/Arrow - Down.svg",
-              color: kFaildColor,
-              progressPercent: 0.3,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            SearchBar(size:size),
-            const SizedBox(
-              height: 10,
-            ),
-            Results(
-                title: "decrease",
-                percent: 32,
-                color: kFaildColor,
-                path: "assets/icons/light/Arrow - Down.svg"),
-            const SizedBox(
-              height: 10,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Results(
-                title: "increase",
-                percent: 32,
-                color: kSuccessColor,
-                path: "assets/icons/light/Arrow - Up.svg"),
-            const SizedBox(
-              height: 10,
-            ),
-            DailyAction(size: size,title: "Compare my Photo",buttonText: "Compare",onTab: (){},),
-            const SizedBox(
-              height: 10,
-            ),
-            Sleeps(title: "decrease", percent: 21, color: kFaildColor),
-            UpcomingWorkoutCard(
-              size: size,
-              status: status,
-              image: "assets/images/Workout_Vector1.svg",
-              onChanged: (value) {
-                setState(() {
-                  status = value;
-                });
-              },
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-             
-            
-            LatestWorkoutCard(
-              size: size,
-              image: "assets/images/Workout_Vector.svg",
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            SleepScheduleBanner(size: size),
-            const SizedBox(
-              height: 10,
-            ),
-            PhotoRemiderBanner(
-              size: size,
-              date: "July 20",
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            TodayTargetBanner(size: size),
-            const SizedBox(
-              height: 10,
-            ),
-            HomeBanner(size: size),
-            const SizedBox(
-              height: 10,
-            ),
-            SleepBanner(size: size),
-            const SizedBox(
-              height: 10,
-            ),
-            ProgressPhotoBanner(size: size),
-            const SizedBox(
-              height: 10,
-            ),
-            const LableButton(
-              text: "KG",
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            AuthButton(
-              size: size,
-              text: "Next",
-              onTap: () {},
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            SecondaryButton(size: size, text: "Button", onTap: () {},color1: kSecondryColor1,color2: kSecondryColor2,),
-            const SizedBox(
-              height: 10,
-            ),
-            AddCameraButton(
-                size: size, svgPicture: "assets/icons/light/Plus.svg"),
-            OnBoardingButton(
-              onNext: () {},
-            )
+            ActivityTimeLine(size: size,time: "Fri, 28 June ",)
           ],
         ),
       ),
