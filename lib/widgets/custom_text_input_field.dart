@@ -56,7 +56,7 @@ class CustomTextFormField extends StatelessWidget {
           keyboardType: textInputType,
           
           maxLength: maxLength,
-          decoration: inputDecoration("Last Name",prefixIcon: SvgPicture.asset("assets/icons/light/Profile.svg",color: kGrayColor1,)),
+          decoration: inputDecoration(kBorderColor,"Last Name",prefixIcon: SvgPicture.asset("assets/icons/light/Profile.svg",color: kGrayColor1,)),
           
         )
       ],

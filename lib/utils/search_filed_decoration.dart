@@ -1,24 +1,20 @@
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:fitness_ui/utils/text_style.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 
-InputDecoration inputDecoration(
-  Color fillColor,
-  String hintText,
-    {IconButton? iconButton, Widget? prefixIcon, SvgPicture? suffixIcon}) {
+InputDecoration inputSearchDecoration() {
       double radius = 14;
   return InputDecoration(
     contentPadding: const EdgeInsets.fromLTRB(15.0, 13.0, 15.0, 13.0),
-    hintText: hintText,
-    hintStyle: kLargeTextRegular,
+    hintText: "Search here",
+    hintStyle: const TextStyle(fontFamily: "Poppins",fontSize: 12,fontWeight: FontWeight.w400,color: kGrayColor3),
     prefixIcon: Padding(
       padding: const EdgeInsets.only(top: 15.0, bottom: 15),
-      child: prefixIcon,
+      child: SvgPicture.asset("assets/icons/light/Search.svg",color: kGrayColor2,),
     ),
-    suffixIcon: suffixIcon,
     filled: true,
-    fillColor: fillColor,
+    fillColor: Colors.white,
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(radius),
       borderSide: BorderSide.none

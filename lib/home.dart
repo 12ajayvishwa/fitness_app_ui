@@ -24,6 +24,8 @@ import 'widgets/banner_components/today_target_banner.dart';
 import 'widgets/daily_action.dart';
 import 'widgets/graphics_modal_banner/meals.dart';
 import 'widgets/graphics_modal_banner/workout_increase.dart';
+import 'widgets/search_bar.dart';
+import 'widgets/workout_schedule_modal.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -101,6 +103,15 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 10,
             ),
+            WorkoutScheduleModal(size: size,color: kGrayColor3,),
+             const SizedBox(
+              height: 10,
+            ),
+             WorkoutScheduleModal(size: size,color: kFaildColor,remainingTime: "4h ago",),
+
+            const SizedBox(
+              height: 10,
+            ),
             WorkoutIncrease(size: size),
             const SizedBox(
               height: 10,
@@ -127,6 +138,10 @@ class _HomeState extends State<Home> {
               color: kFaildColor,
               progressPercent: 0.3,
             ),
+            const SizedBox(
+              height: 10,
+            ),
+            SearchBar(size:size),
             const SizedBox(
               height: 10,
             ),
@@ -167,6 +182,8 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 10,
             ),
+             
+            
             LatestWorkoutCard(
               size: size,
               image: "assets/images/Workout_Vector.svg",
