@@ -45,11 +45,11 @@ final VoidCallback? onTap;
               top: 20,
               right: 20,
               bottom: 20,
-              child: SvgPicture.asset("assets/images/Vector1.svg")),
+              child: SvgPicture.asset("assets/images/Layer 1.svg")),
               Positioned(
                 bottom: 26,
                 left: 20,
-                child: SecondaryButton(size: size, text: "Learn More", onTap: (){print("hi");}))
+                child: SecondaryButton(size: size, text: "Learn More", onTap: (){print("hi");},color1: kSecondryColor1,color2: kSecondryColor2,))
       ]),
     );
   }

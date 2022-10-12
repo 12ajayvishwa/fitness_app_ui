@@ -9,6 +9,8 @@ import 'package:fitness_ui/widgets/card_components/latest_workout_card.dart';
 import 'package:fitness_ui/widgets/card_components/upcoming_workout_card.dart';
 import 'package:fitness_ui/widgets/custom_nav_bar.dart';
 import 'package:fitness_ui/widgets/custom_text_input_field.dart';
+import 'package:fitness_ui/widgets/graphics_modal_banner/results.dart';
+import 'package:fitness_ui/widgets/graphics_modal_banner/sleeps.dart';
 import 'package:fitness_ui/widgets/lable_button.dart';
 import 'package:fitness_ui/widgets/search_nav.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +21,8 @@ import 'utils/buttons/auth_button.dart';
 import 'utils/buttons/onboarding_button.dart';
 import 'widgets/banner_components/sleep_banner.dart';
 import 'widgets/banner_components/today_target_banner.dart';
+import 'widgets/daily_action.dart';
+import 'widgets/graphics_modal_banner/meals.dart';
 import 'widgets/graphics_modal_banner/workout_increase.dart';
 
 class Home extends StatefulWidget {
@@ -42,7 +46,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: const Color(0xFFFFFFFF),
+      backgroundColor: Color.fromARGB(255, 230, 228, 228),
       bottomNavigationBar: CustomBottomNavBar(
         size: size,
         svgIcon1: pageIndex == 0
@@ -97,15 +101,63 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 10,
             ),
-            WorkoutIncrease(size:size),
+            WorkoutIncrease(size: size),
             const SizedBox(
               height: 10,
             ),
+            Meals(
+              size: size,
+              title: "fibre",
+              percent: 91,
+              path: "assets/icons/light/Arrow - Up.svg",
+              color: kSuccessColor,
+              progressPercent: 0.8,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Meals(
+              size: size,
+              title: "fats",
+              percent: 45,
+              path: "assets/icons/light/Arrow - Down.svg",
+              color: kFaildColor,
+              progressPercent: 0.3,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Results(
+                title: "decrease",
+                percent: 32,
+                color: kFaildColor,
+                path: "assets/icons/light/Arrow - Down.svg"),
+            const SizedBox(
+              height: 10,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Results(
+                title: "increase",
+                percent: 32,
+                color: kSuccessColor,
+                path: "assets/icons/light/Arrow - Up.svg"),
+            const SizedBox(
+              height: 10,
+            ),
+            DailyAction(size: size,title: "Compare my Photo",buttonText: "Compare",onTab: (){},),
+            const SizedBox(
+              height: 10,
+            ),
+            Sleeps(title: "decrease", percent: 21, color: kFaildColor),
             UpcomingWorkoutCard(
               size: size,
-              
               status: status,
-              image: "assets/images/Workout-Pic1.svg",
+              image: "assets/images/Workout_Vector1.svg",
               onChanged: (value) {
                 setState(() {
                   status = value;
@@ -117,7 +169,7 @@ class _HomeState extends State<Home> {
             ),
             LatestWorkoutCard(
               size: size,
-              image: "assets/images/Workout-Pic.svg",
+              image: "assets/images/Workout_Vector.svg",
             ),
             const SizedBox(
               height: 10,
@@ -163,7 +215,7 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 10,
             ),
-            SecondaryButton(size: size, text: "Button", onTap: () {}),
+            SecondaryButton(size: size, text: "Button", onTap: () {},color1: kSecondryColor1,color2: kSecondryColor2,),
             const SizedBox(
               height: 10,
             ),

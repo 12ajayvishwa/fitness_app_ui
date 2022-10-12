@@ -69,7 +69,9 @@ kSmallTextRegular(Color color){
 
 //Caption text
 var kCaptionTextBold = TextStyle(fontFamily: "Poppins",fontSize: captionTextSize,fontWeight: FontWeight.bold);
-var kCaptionTextSemiBold = TextStyle(fontFamily: "Poppins",fontSize: captionTextSize,fontWeight: FontWeight.w600,color: Colors.white);
+kCaptionTextSemiBold(){
+  return TextStyle(fontFamily: "Poppins",fontSize: captionTextSize,fontWeight: FontWeight.w600,color: Colors.white,letterSpacing: 1,);
+}
 var kCaptionTextMedium = TextStyle(fontFamily: "Poppins",fontSize: captionTextSize,fontWeight: FontWeight.w500);
 kCaptionTextRegular(Color color){
   return TextStyle(fontFamily: "Poppins",fontSize: captionTextSize,color: color);

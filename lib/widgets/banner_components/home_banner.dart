@@ -47,7 +47,7 @@ final VoidCallback? onTap;
               Positioned(
                 bottom: 26,
                 left: 20,
-                child: SecondaryButton(size: size, text: "View More", onTap: (){print("hi");}))
+                child: SecondaryButton(size: size, text: "View More", onTap: (){print("hi");},color1: kSecondryColor1,color2: kSecondryColor2,))
       ]),
     );
   }

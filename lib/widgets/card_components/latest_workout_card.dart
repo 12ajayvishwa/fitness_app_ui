@@ -36,7 +36,9 @@ class _LatestWorkoutCardState extends State<LatestWorkoutCard> {
     return Container(
       height: widget.size.height * 0.13,
       width: widget.size.width * 0.98,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(16)),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -97,7 +99,7 @@ class _LatestWorkoutCardState extends State<LatestWorkoutCard> {
                     const Positioned(
                       bottom: 0,
                       left: 7,
-                      child: ProgressBar(percent: 0.8,)
+                      child: ProgressBar(percent: 0.8,width: 209,lineHeight: 10,radius: 50,)
                       
                       // LinearPercentIndicator(
                       //   width: 191.0,

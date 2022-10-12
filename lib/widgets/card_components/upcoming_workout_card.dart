@@ -29,7 +29,9 @@ class UpcomingWorkoutCard extends StatelessWidget {
     return Container(
         height: size.height * 0.13,
         width: size.width * 0.98,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(16)),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16)),
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Padding(
