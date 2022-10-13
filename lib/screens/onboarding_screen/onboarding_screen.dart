@@ -20,29 +20,33 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(
             child: PageView(
               controller: pageController,
-              physics: const NeverScrollableScrollPhysics(),
               children: [
                 Slide(
+                  size: size,
                   text: "slide 1",
                   onNext: nextPage,
                   curveSize: 25.00,
                 ),
                 Slide(
+                  size: size,
                   text: "slide 2",
                   onNext: nextPage,
                   curveSize: 50.00,
                 ),
                 Slide(
+                  size: size,
                   text: "slide 3",
                   onNext: nextPage,
                   curveSize: 75.00,
                 ),
                  Slide(
+                  size: size,
                   text: "slide 4",
                   onNext: nextPage,
                   curveSize: 100.00,
@@ -54,25 +58,29 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
 class Slide extends StatelessWidget {
   final String text;
+  final Size size;
   final VoidCallback onNext;
   final double curveSize;
   const Slide({
     Key? key,
     required this.text,
-    required this.onNext, required this.curveSize,
+    required this.onNext, required this.curveSize, required this.size,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Column(
+    return  Container(
+      height: size.height,
+      width: size.width,
+        child: Stack(
       children: [
-        
-        Text(text),
-        InkWell(onTap: onNext, child: Container()),
-        ProgressButton(
-          onNext: onNext,
-          curveSize: curveSize,
+        Positioned(
+          bottom: 50,
+          right: 25,
+          child: ProgressButton(
+            onNext: onNext,
+            curveSize: curveSize,
+          ),
         )
       ],
     ));
