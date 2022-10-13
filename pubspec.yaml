@@ -41,6 +41,8 @@ dependencies:
   custom_switch: ^0.0.1
   timeline_tile: ^2.0.0
   gradient_borders: ^0.2.0
+  fl_chart: ^0.55.2
+  syncfusion_flutter_charts: ^20.3.49
 
 dev_dependencies:
   flutter_test:

@@ -20,6 +20,7 @@ import 'package:flutter_svg/svg.dart';
 import 'utils/buttons/add_camera_button.dart';
 import 'utils/buttons/auth_button.dart';
 import 'utils/buttons/onboarding_button.dart';
+import 'widgets/activity_status/heart_rate.dart';
 import 'widgets/activity_time_line.dart';
 import 'widgets/banner_components/sleep_banner.dart';
 import 'widgets/banner_components/today_target_banner.dart';
@@ -109,6 +110,10 @@ class _HomeState extends State<Home> {
               height: 10,
             ),
             ActivityTimeLine(size: size,time: "Fri, 28 June ",),
+            const SizedBox(
+              height: 10,
+            ),
+            HeartRate(size:size),
             const SizedBox(
               height: 10,
             ),
