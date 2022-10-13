@@ -24,7 +24,7 @@ class SecondaryButton extends StatelessWidget {
               begin: Alignment.centerRight,
               end: Alignment.centerLeft,
               colors: [color2,color1])),
-      child: Center(child: Text(text, style: kCaptionTextSemiBold(),)),
+      child: Center(child: Text(text, style: kCaptionTextSemiBold(Colors.white),)),
     );
   }
 }

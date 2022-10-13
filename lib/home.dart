@@ -1,3 +1,4 @@
+import 'package:fitness_ui/utils/buttons/custom_dropdown_button.dart';
 import 'package:fitness_ui/utils/buttons/secondary_button.dart';
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:fitness_ui/utils/text_style.dart';
@@ -26,7 +27,9 @@ import 'widgets/daily_action.dart';
 import 'widgets/graphics_modal_banner/meals.dart';
 import 'widgets/graphics_modal_banner/workout_increase.dart';
 import 'widgets/search_bar.dart';
+import 'widgets/tab_bar.dart';
 import 'widgets/workout_schedule_modal.dart';
+import 'widgets/workout_train_section.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -38,6 +41,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int pageIndex = 0;
   bool status = false;
+  String dropdownvalue = 'Breakfast';  
 
   final pages = [
     const Icon(Icons.abc),
@@ -104,7 +108,19 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 10,
             ),
-            ActivityTimeLine(size: size,time: "Fri, 28 June ",)
+            ActivityTimeLine(size: size,time: "Fri, 28 June ",),
+            const SizedBox(
+              height: 10,
+            ),
+            CustomDropdownButton(size: size,text: "Breakfast",),
+            const SizedBox(
+              height: 10,
+            ),
+            SwitchTabBar(size: size,),
+            const SizedBox(
+              height: 10,
+            ),
+            WorkoutTrainSection(size:size)
           ],
         ),
       ),
