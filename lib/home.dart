@@ -23,6 +23,8 @@ import 'utils/buttons/auth_button.dart';
 import 'utils/buttons/onboarding_button.dart';
 import 'widgets/activity_status/activity_chart.dart';
 import 'widgets/activity_status/heart_rate.dart';
+import 'widgets/activity_status/meal.dart';
+import 'widgets/activity_status/result.dart';
 import 'widgets/activity_status/sleep_chart.dart';
 import 'widgets/activity_time_line.dart';
 import 'widgets/banner_components/sleep_banner.dart';
@@ -45,7 +47,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int pageIndex = 0;
   bool status = false;
-  String dropdownvalue = 'Breakfast';  
+  String dropdownvalue = 'Breakfast';
 
   final pages = [
     const Icon(Icons.abc),
@@ -112,16 +114,15 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 10,
             ),
-            HeartRate(),
-            
+            ActivityChart(size: size),
             const SizedBox(
               height: 10,
             ),
-            ActivityTimeLine(size: size,time: "Fri, 28 June ",),
+            Result(),
             const SizedBox(
               height: 10,
             ),
-            ActivityChart(size:size),
+            Meal(),
             const SizedBox(
               height: 10,
             ),
@@ -129,15 +130,31 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 10,
             ),
-            CustomDropdownButton(size: size,text: "Breakfast",),
+            ActivityTimeLine(
+              size: size,
+              time: "Fri, 28 June ",
+            ),
             const SizedBox(
               height: 10,
             ),
-            SwitchTabBar(size: size,),
+            ActivityChart(size: size),
             const SizedBox(
               height: 10,
             ),
-            WorkoutTrainSection(size:size)
+            CustomDropdownButton(
+              size: size,
+              text: "Breakfast",
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            SwitchTabBar(
+              size: size,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            WorkoutTrainSection(size: size)
           ],
         ),
       ),

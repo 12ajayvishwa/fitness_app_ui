@@ -1,13 +1,29 @@
 import 'package:flutter/material.dart';
-class ActivityChart extends StatelessWidget {
+class ActivityChart extends StatefulWidget {
   final Size size;
   const ActivityChart({Key? key, required this.size}) : super(key: key);
+   List<Color> get availableColors => const <Color>[
+        Colors.purpleAccent,
+        Colors.yellow,
+        Colors.lightBlue,
+        Colors.orange,
+        Colors.pink,
+        Colors.redAccent,
+      ];
+
+  @override
+  State<ActivityChart> createState() => _ActivityChartState();
+}
+
+class _ActivityChartState extends State<ActivityChart> {
+
+  
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: size.height*0.35,
-      width: size.width*0.96,
+      height: widget.size.height*0.35,
+      width: widget.size.width*0.96,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),

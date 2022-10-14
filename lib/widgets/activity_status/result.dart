@@ -1,16 +1,16 @@
 import 'dart:math';
-import 'package:fitness_ui/utils/colors.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import '../../utils/colors.dart';
 
-class SleepChart extends StatefulWidget {
-  const SleepChart({Key? key}) : super(key: key);
+class Result extends StatefulWidget {
+  const Result({Key? key}) : super(key: key);
 
   @override
-  State<SleepChart> createState() => _SleepChartState();
+  State<Result> createState() => _ResultState();
 }
 
-class _SleepChartState extends State<SleepChart> {
+class _ResultState extends State<Result> {
   void startCreatingDemoData() async {
     for (int i = 0; i < 7; i++) {
       if (i == 0) continue;
@@ -54,37 +54,37 @@ class _SleepChartState extends State<SleepChart> {
         maxY: 6,
         lineBarsData: [
           LineChartBarData(
-              spots: flspots,
-              isCurved: true,
-              colors: gradientColors,
-              barWidth: 4,
-              isStrokeCapRound: true,
-              dotData: FlDotData(
-                show: false,
-                getDotPainter:(p0, p1, p2, p3) => FlDotCirclePainter(
+            spots: flspots,
+            isCurved: true,
+            colors: gradientColors,
+            barWidth: 4,
+            isStrokeCapRound: true,
+            dotData: FlDotData(
+              show: true,
+              getDotPainter: (p0, p1, p2, p3) => FlDotCirclePainter(
                   radius: 4,
                   color: Colors.white,
                   strokeWidth: 2,
-                  strokeColor: kBrandColor2
-                ),
-              ),
-              // shadow: Shadow(color: kSecondryColor1,
-              // offset: Offset(0,2),
-              // blurRadius: 10,s
+                  strokeColor: kBrandColor2),
+            ),
+          )
+          // shadow: Shadow(color: kSecondryColor1,
+          // offset: Offset(0,2),
+          // blurRadius: 10,s
 
-              belowBarData: BarAreaData(
-                  show: true,
-                  colors: gradientColors2,
-                  // .map((color) => color.withOpacity(0.2))
-                  // .toList(),
-                  gradientColorStops: [0, 0.5, 1.0],
-                  gradientFrom: const Offset(0, 0),
-                  gradientTo: const Offset(0, 2)))
+          // belowBarData: BarAreaData(
+          //     show: true,
+          //     colors: gradientColors2,
+          //     // .map((color) => color.withOpacity(0.2))
+          //     // .toList(),
+          //     gradientColorStops: [0, 0.5, 1.0],
+          //     gradientFrom: const Offset(0, 0),
+          //     gradientTo: const Offset(0, 2)))
         ]);
   }
 
   List<FlSpot> flspots = [
-    FlSpot(0, 0),
+    FlSpot(0, 3),
   ];
 
   List<Color> gradientColors = [kBrandColor1, kBrandColor2];
@@ -128,19 +128,19 @@ class LineTitles {
           getTitles: (value) {
             switch (value.toInt()) {
               case 0:
-                return "Sun";
+                return "Jan";
               case 1:
-                return "Mon";
+                return "Feb";
               case 2:
-                return "Tue";
+                return "Mar";
               case 3:
-                return "Wed";
+                return "Apr";
               case 4:
-                return "Thu";
+                return "May";
               case 5:
-                return "Fri";
+                return "Jun";
               case 6:
-                return "Sat";
+                return "Jul";
             }
 
             return '';
@@ -158,17 +158,17 @@ class LineTitles {
           getTitles: (value) {
             switch (value.toInt()) {
               case 0:
-                return "0h";
+                return "0%";
               case 1:
-                return "2h";
+                return "20%";
               case 2:
-                return "4h";
+                return "40%";
               case 3:
-                return "6h";
+                return "60%";
               case 4:
-                return "8h";
+                return "80%";
               case 5:
-                return "10h";
+                return "100%";
             }
 
             return '';
