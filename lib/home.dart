@@ -13,6 +13,7 @@ import 'package:fitness_ui/widgets/custom_text_input_field.dart';
 import 'package:fitness_ui/widgets/graphics_modal_banner/results.dart';
 import 'package:fitness_ui/widgets/graphics_modal_banner/sleeps.dart';
 import 'package:fitness_ui/widgets/lable_button.dart';
+import 'package:fitness_ui/widgets/progress_bar.dart';
 import 'package:fitness_ui/widgets/search_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -22,6 +23,7 @@ import 'utils/buttons/auth_button.dart';
 import 'utils/buttons/onboarding_button.dart';
 import 'widgets/activity_status/activity_chart.dart';
 import 'widgets/activity_status/heart_rate.dart';
+import 'widgets/activity_status/sleep_chart.dart';
 import 'widgets/activity_time_line.dart';
 import 'widgets/banner_components/sleep_banner.dart';
 import 'widgets/banner_components/today_target_banner.dart';
@@ -110,6 +112,11 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 10,
             ),
+            HeartRate(),
+            
+            const SizedBox(
+              height: 10,
+            ),
             ActivityTimeLine(size: size,time: "Fri, 28 June ",),
             const SizedBox(
               height: 10,
@@ -118,7 +125,7 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 10,
             ),
-            HeartRate(size:size),
+            SleepChart(),
             const SizedBox(
               height: 10,
             ),

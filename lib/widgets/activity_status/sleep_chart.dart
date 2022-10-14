@@ -3,14 +3,14 @@ import 'package:fitness_ui/utils/colors.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-class HeartRate extends StatefulWidget {
-  const HeartRate({Key? key}) : super(key: key);
+class SleepChart extends StatefulWidget {
+  const SleepChart({Key? key}) : super(key: key);
 
   @override
-  State<HeartRate> createState() => _HeartRateState();
+  State<SleepChart> createState() => _SleepChartState();
 }
 
-class _HeartRateState extends State<HeartRate> {
+class _SleepChartState extends State<SleepChart> {
   void startCreatingDemoData() async {
     for (int i = 0; i < 7; i++) {
       if (i == 0) continue;
