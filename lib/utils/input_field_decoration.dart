@@ -11,7 +11,7 @@ InputDecoration inputDecoration(
   return InputDecoration(
     contentPadding: const EdgeInsets.fromLTRB(15.0, 13.0, 15.0, 13.0),
     hintText: hintText,
-    hintStyle: kLargeTextRegular,
+    hintStyle: kLargeTextRegular(kGrayColor1),
     prefixIcon: Padding(
       padding: const EdgeInsets.only(top: 15.0, bottom: 15),
       child: prefixIcon,

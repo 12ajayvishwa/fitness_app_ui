@@ -49,7 +49,7 @@ class CustomTextFormField extends StatelessWidget {
         TextFormField(
           cursorHeight: 22,
           cursorColor: kGrayColor2,
-          style: kMediumTextRegular,
+          style: kMediumTextRegular(kGrayColor1),
           controller: controller,
           validator: validator,
           textInputAction: textInputAction,

@@ -1,4 +1,6 @@
+import 'package:fitness_ui/home.dart';
 import 'package:fitness_ui/utils/colors.dart';
+import 'package:fitness_ui/utils/text_style.dart';
 import 'package:fitness_ui/widgets/animated_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -15,7 +17,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   void nextPage() {
     pageController.nextPage(
-        duration: const Duration(seconds: 2), curve: Curves.ease);
+        duration: const Duration(seconds:4), curve: Curves.ease);
   }
 
   @override
@@ -24,33 +26,40 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     return Scaffold(
         backgroundColor: Colors.white,
         body: PageView(
-          // controller: pageController,
+          controller: pageController,
           children: [
         Slide(
           size: size,
-          text: "slide 1",
+          title: "Track Your Goal",
+          subTitle: "Don't worry if you have trouble determining your goals, We can help you determine your goals and track your goals",
           onNext: nextPage,
           curveSize: 25.00,
           path: "assets/images/First_Slide.png",
         ),
         Slide(
           size: size,
-          text: "slide 2",
+          title: "Get Burn",
+          subTitle: "Let’s keep burning, to achive yours goals, it hurts only temporarily, if you give up now you will be in pain forever",
           onNext: nextPage,
           curveSize: 50.00,
           path:"assets/images/Second_Slide.png"
         ),
         Slide(
           size: size,
-          text: "slide 3",
+          title: "Eat Well",
+          subTitle: "Let's start a healthy lifestyle with us, we can determine your diet every day. healthy eating is fun",
           onNext: nextPage,
           curveSize: 75.00,
           path: "assets/images/Third_Slide.png",
         ),
         Slide(
           size: size,
-          text: "slide 4",
-          onNext: nextPage,
+         title: "Improve Sleep\nQuality",
+         subTitle: "Improve the quality of your sleep with us, good quality sleep can bring a good mood in the morning",
+         onNext: (){},
+          goNext: () {
+            Navigator.push(context, MaterialPageRoute(builder: (_) => Home()));
+          },
           curveSize: 100.00,
           path: "assets/images/Fourth_Slide.png",
         ),
@@ -60,15 +69,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 }
 
 class Slide extends StatelessWidget {
-  final String text;
+  final String title;
+  final String subTitle;
   final Size size;
   final VoidCallback onNext;
+  final VoidCallback? goNext;
   final double curveSize;
   final String path;
   const Slide({
     Key? key,
-    required this.text,
+    required this.title,
+    required this.subTitle,
     required this.onNext,
+    this.goNext,
     required this.curveSize,
     required this.size, required this.path,
   }) : super(key: key);
@@ -79,12 +92,12 @@ class Slide extends StatelessWidget {
         height: size.height,
         width: size.width,
         child: Stack(
-          
           children: [
             Positioned(
               bottom: 50,
               right: 25,
               child: ProgressButton(
+                goNext: goNext,
                 onNext: onNext,
                 curveSize: curveSize,
               ),
@@ -93,12 +106,19 @@ class Slide extends StatelessWidget {
                 top: 0,
                 child: Image.asset(path)),
             Positioned(
-              bottom: size.height*0.3,
+              bottom: size.height * 0.2,
+              left: 20,
               child: Container(
-                height: size.height*0.15,
+                height: size.height*0.23,
                 width: size.width*0.95,
-              child: Column(
                 
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(title,style: kTitleH2Bold,),
+                  SizedBox(height: 20,),
+                  Text(subTitle,textAlign: TextAlign.start,style: kMediumTextRegular(kGrayColor1),)
+                ],
               ),
               ))
           ],
@@ -109,8 +129,9 @@ class Slide extends StatelessWidget {
 class ProgressButton extends StatelessWidget {
   final double curveSize;
   final VoidCallback onNext;
+  final VoidCallback? goNext;
   const ProgressButton(
-      {Key? key, required this.onNext, required this.curveSize})
+      {Key? key, required this.onNext, required this.curveSize,this.goNext})
       : super(key: key);
 
   @override
@@ -121,13 +142,14 @@ class ProgressButton extends StatelessWidget {
         child: Stack(
           children: [
             AnimatedIndicator(
-              duration: const Duration(seconds: 2),
+              duration: const Duration(seconds: 4),
               callback: onNext,
               size: 75,
               curveSize: curveSize,
             ),
             Center(
               child: GestureDetector(
+                onTap: goNext,
                   child: Container(
                       height: 60,
                       width: 60,
