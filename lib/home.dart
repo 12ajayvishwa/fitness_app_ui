@@ -23,7 +23,7 @@ import 'utils/buttons/add_camera_button.dart';
 import 'utils/buttons/auth_button.dart';
 import 'utils/buttons/onboarding_button.dart';
 import 'widgets/activity_status/activity_chart.dart';
-import 'widgets/activity_status/heart_rate.dart';
+import 'widgets/status/heart_rate.dart';
 import 'widgets/activity_status/meal.dart';
 import 'widgets/activity_status/result.dart';
 import 'widgets/activity_status/sleep_chart.dart';
@@ -35,6 +35,9 @@ import 'widgets/daily_action.dart';
 import 'widgets/graphics_modal_banner/meals.dart';
 import 'widgets/graphics_modal_banner/workout_increase.dart';
 import 'widgets/search_bar.dart';
+import 'widgets/status/calories.dart';
+import 'widgets/status/sleep.dart';
+import 'widgets/status/water_intake.dart';
 import 'widgets/tab_bar.dart';
 import 'widgets/workout_schedule_modal.dart';
 import 'widgets/workout_train_section.dart';
@@ -116,6 +119,18 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 10,
             ),
+            WaterIntake(),
+            const SizedBox(
+              height: 10,
+            ),
+            Sleep(),
+            const SizedBox(
+              height: 10,
+            ),
+            Calories(size: size),
+            const SizedBox(
+              height: 10,
+            ),
             ActivityChart(size: size),
             const SizedBox(
               height: 10,
@@ -133,7 +148,7 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 10,
             ),
-          
+
             Result(),
             const SizedBox(
               height: 10,
