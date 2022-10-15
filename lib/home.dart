@@ -2,6 +2,7 @@ import 'package:fitness_ui/utils/buttons/custom_dropdown_button.dart';
 import 'package:fitness_ui/utils/buttons/secondary_button.dart';
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:fitness_ui/utils/text_style.dart';
+import 'package:fitness_ui/widgets/activity_status/workout-2.dart';
 import 'package:fitness_ui/widgets/banner_components/home_banner.dart';
 import 'package:fitness_ui/widgets/banner_components/photos_reminder_banner.dart';
 import 'package:fitness_ui/widgets/banner_components/progress_photo_banner.dart';
@@ -26,6 +27,7 @@ import 'widgets/activity_status/heart_rate.dart';
 import 'widgets/activity_status/meal.dart';
 import 'widgets/activity_status/result.dart';
 import 'widgets/activity_status/sleep_chart.dart';
+import 'widgets/activity_status/workout.dart';
 import 'widgets/activity_time_line.dart';
 import 'widgets/banner_components/sleep_banner.dart';
 import 'widgets/banner_components/today_target_banner.dart';
@@ -118,6 +120,20 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 10,
             ),
+            WorkOutChart(),
+            // ActivityChart(size: size),
+            const SizedBox(
+              height: 10,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            WorkOutChart2(),
+            // ActivityChart(size: size),
+            const SizedBox(
+              height: 10,
+            ),
+          
             Result(),
             const SizedBox(
               height: 10,

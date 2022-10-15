@@ -16,3 +16,4 @@ const kGrayColor3 = Color(0xFFDDDADA);
 const kBorderColor = Color(0xFFF7F8F8);
 const kSuccessColor = Color(0xFF42D742);
 const kFaildColor = Color(0xFFFF0000);
+

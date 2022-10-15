@@ -1,16 +1,20 @@
 import 'dart:math';
-import 'package:fl_chart/fl_chart.dart';
-import 'package:flutter/material.dart';
-import '../../utils/colors.dart';
 
-class Result extends StatefulWidget {
-  const Result({Key? key}) : super(key: key);
+import 'package:fitness_ui/utils/colors.dart';
+import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/src/foundation/key.dart';
+import 'package:flutter/src/widgets/framework.dart';
+
+class WorkOutChart extends StatefulWidget {
+  const WorkOutChart({Key? key}) : super(key: key);
 
   @override
-  State<Result> createState() => _ResultState();
+  State<WorkOutChart> createState() => _WorkOutChartState();
 }
 
-class _ResultState extends State<Result> {
+class _WorkOutChartState extends State<WorkOutChart> {
   void startCreatingDemoData1() async {
     for (int i = 0; i < 7; i++) {
       if (i == 0) continue;
@@ -72,11 +76,12 @@ class _ResultState extends State<Result> {
           LineChartBarData(
             spots: flspots2,
             isCurved: true,
-            colors: [kSecondryColor2],
+            colors: [kSecondryColor2.withOpacity(0.3)],
             barWidth: 2,
             isStrokeCapRound: true,
             dotData: FlDotData(show: false)
           ),
+          
           LineChartBarData(
             spots: flspots1,
             isCurved: true,
@@ -84,7 +89,7 @@ class _ResultState extends State<Result> {
             barWidth: 4,
             isStrokeCapRound: true,
             dotData: FlDotData(
-              show: true,
+              show: false,
               getDotPainter: (p0, p1, p2, p3) => FlDotCirclePainter(
                   radius: 4,
                   color: Colors.white,
@@ -115,7 +120,7 @@ class _ResultState extends State<Result> {
     FlSpot(0, 2),
   ];
 
-  List<Color> gradientColors = [kBrandColor1, kBrandColor2];
+  List<Color> gradientColors = [kBrandColor1.withOpacity(0.6)];
   
   @override
   void initState() {
@@ -129,17 +134,20 @@ class _ResultState extends State<Result> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.3,
-      width: size.width * 0.96,
+       height: size.height*0.35,
+      width: size.width*0.96,
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(12)),
-      child: Stack(alignment: Alignment.center, children: [
+        borderRadius: BorderRadius.circular(12),
+        color: Colors.white
+      ),
+       child: Stack(alignment: Alignment.center, children: [
         SizedBox(
             height: size.height * 0.28,
             width: size.width * 0.85,
             child: LineChart(data)),
       ]),
     );
+
   }
 }
 

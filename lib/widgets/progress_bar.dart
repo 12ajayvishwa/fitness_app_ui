@@ -19,6 +19,7 @@ class ProgressBar extends StatelessWidget {
     percentage: percent,
     animationDuration: 1500,
     radius: radius,
+    
     backgroundColor: const Color(0xFFF7F8F8),
     linearGradient: const LinearGradient(colors: [
       Color(0xFFC58BF2),Color(0xFF92A3FD)
