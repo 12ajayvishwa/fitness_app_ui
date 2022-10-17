@@ -26,9 +26,10 @@ class _RegistrationOneState extends State<RegistrationOne> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
-        child: SizedBox(
+        child: Container(
           height: size.height,
           width: size.width,
+          color: Colors.white,
           child: Stack(
             alignment: Alignment.center,
             children: [
