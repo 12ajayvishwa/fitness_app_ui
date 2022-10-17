@@ -1,6 +1,7 @@
 import 'package:fitness_ui/screens/login_signup_screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'home.dart';
+import 'screens/login_signup_screens/registration-1.dart';
 import 'screens/onboarding_screen/onboarding_screen.dart';
 import 'screens/onboarding_screen/welcome_screen.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home:SignUpScreen()
+      home:RegistrationOne()
     );
   }
 }

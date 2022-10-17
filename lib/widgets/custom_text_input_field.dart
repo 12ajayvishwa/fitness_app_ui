@@ -40,7 +40,7 @@ class CustomTextFormField extends StatelessWidget {
       children: [
         Container(
           height: size.height * 0.06,
-          width: size.width * 0.98,
+          width: size.width * 0.9,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(14.0),
             color: kBorderColor,
