@@ -21,6 +21,13 @@ class _RegistrationOneState extends State<RegistrationOne> {
   final TextEditingController weightController = TextEditingController();
   final TextEditingController heightController = TextEditingController();
 
+  final items = ['Male', 'Female', 'Others'];
+  String? value;
+  String? value1;
+  String? _dropdownError;
+  int _selectedIndex = 0;
+  bool isDropdownOpened = false;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -87,17 +94,18 @@ class _RegistrationOneState extends State<RegistrationOne> {
         child: Form(
             child: Column(
           children: [
-            CustomTextFormField(
-              hintText: "Choose Gender",
-              prefixIcon: SvgPicture.asset(
-                "assets/icons/light/2 User.svg",
-                color: kGrayColor1,
-              ),
-              suffixIcon: SvgPicture.asset(
-                "assets/icons/light/Arrow - Down 2.svg",
-                color: kGrayColor1,
-              ),
-            ),
+            genderPicker(size),
+            // CustomTextFormField(
+            //   hintText: "Choose Gender",
+            //   prefixIcon: SvgPicture.asset(
+            //     "assets/icons/light/2 User.svg",
+            //     color: kGrayColor1,
+            //   ),
+            //   suffixIcon: SvgPicture.asset(
+            //     "assets/icons/light/Arrow - Down 2.svg",
+            //     color: kGrayColor1,
+            //   ),
+            // ),
             SizedBox(
               height: height,
             ),
@@ -161,4 +169,59 @@ class _RegistrationOneState extends State<RegistrationOne> {
       ),
     );
   }
+
+  genderPicker(Size size) {
+    return Container(
+      height: size.height * 0.06,
+      width: size.width * 0.9,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(14.0),
+          color: const Color(0xFFF7F8F8)),
+      child: Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(13.0, 13.0,0, 13.0),
+            child: SvgPicture.asset(
+              "assets/icons/light/2 User.svg",
+              color: kGrayColor1,
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            height: size.height * 0.06,
+            width: size.width * 0.78,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(14.0),
+                color: const Color(0xFFF7F8F8)),
+            child: DropdownButtonHideUnderline(
+              child: DropdownButton<String>(
+                value: value,
+                iconSize: 25,
+                hint: Text(
+                  "Gender",
+                  style: kLargeTextRegular(kGrayColor1),
+                ),
+                icon: SvgPicture.asset(
+                  "assets/icons/light/Arrow - Down 2.svg",
+                  color: kGrayColor1,
+                ),
+                isExpanded: true,
+                items: items.map(buildMenuItems).toList(),
+                onChanged: (value) =>
+                    setState(() => this.value = value as String?),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  DropdownMenuItem<String> buildMenuItems(String item) => DropdownMenuItem(
+        value: item,
+        child: Text(
+          item,
+          style: kMediumTextRegular(kGrayColor1)
+        ),
+      );
 }
