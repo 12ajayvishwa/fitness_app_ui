@@ -221,7 +221,7 @@ class _RegistrationOneState extends State<RegistrationOne> {
         value: item,
         child: Text(
           item,
-          style: kMediumTextRegular(kGrayColor1)
+          style: kMediumTextRegular(kBlackColor)
         ),
       );
 }
