@@ -6,7 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 InputDecoration inputDecoration(
   Color fillColor,
   String hintText,
-    {IconButton? iconButton, Widget? prefixIcon, SvgPicture? suffixIcon}) {
+    {IconButton? iconButton, Widget? prefixIcon, Widget? suffixIcon}) {
       double radius = 14;
   return InputDecoration(
     contentPadding: const EdgeInsets.fromLTRB(15.0, 13.0, 15.0, 13.0),
@@ -16,7 +16,10 @@ InputDecoration inputDecoration(
       padding: const EdgeInsets.only(top: 15.0, bottom: 15),
       child: prefixIcon,
     ),
-    suffixIcon: suffixIcon,
+    suffixIcon: Padding(
+      padding: const EdgeInsets.only(top: 15.0, bottom: 15,right: 15),
+      child: suffixIcon,
+    ),
     filled: true,
     fillColor: fillColor,
     enabledBorder: OutlineInputBorder(

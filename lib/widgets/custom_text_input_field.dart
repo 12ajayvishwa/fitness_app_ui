@@ -15,7 +15,7 @@ class CustomTextFormField extends StatelessWidget {
   final bool? obsecureText;
   final TextInputAction? textInputAction;
   final Widget? prefixIcon;
-  final IconData? suffixIcon;
+  final Widget? suffixIcon;
   final int? maxLength;
 
   const CustomTextFormField(
@@ -54,9 +54,9 @@ class CustomTextFormField extends StatelessWidget {
           validator: validator,
           textInputAction: textInputAction,
           keyboardType: textInputType,
-          
+          obscureText: obsecureText ?? false,
           maxLength: maxLength,
-          decoration: inputDecoration(kBorderColor,"Last Name",prefixIcon: SvgPicture.asset("assets/icons/light/Profile.svg",color: kGrayColor1,)),
+          decoration: inputDecoration(kBorderColor,hintText!,prefixIcon: prefixIcon,suffixIcon: suffixIcon,),
           
         )
       ],
