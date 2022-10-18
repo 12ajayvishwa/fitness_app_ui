@@ -45,6 +45,7 @@ dependencies:
   syncfusion_flutter_charts: ^20.3.49
   intl: ^0.17.0
   numberpicker: ^2.1.1
+  carousel_slider: ^4.1.1
 
 dev_dependencies:
   flutter_test:

@@ -55,7 +55,9 @@ kLargeTextRegular(Color color){
 
 //Medium text
 var kMediumTextBold = TextStyle(fontFamily: "Poppins",fontSize: mediumTextSize,fontWeight: FontWeight.bold);
-var kMediumTextSemiBold = TextStyle(fontFamily: "Poppins",fontSize: mediumTextSize,fontWeight: FontWeight.w600,color: Colors.white);
+kMediumTextSemiBold({Color? color}){
+  return TextStyle(fontFamily: "Poppins",fontSize: mediumTextSize,fontWeight: FontWeight.w600,color: Colors.white);
+} 
 var kMediumTextMedium = TextStyle(fontFamily: "Poppins",fontSize: mediumTextSize,fontWeight: FontWeight.w500);
 kMediumTextRegular(Color color){
   return TextStyle(fontFamily: "Poppins",fontSize: mediumTextSize,color: color);

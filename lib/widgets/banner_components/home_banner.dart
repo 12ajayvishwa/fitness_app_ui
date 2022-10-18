@@ -28,7 +28,7 @@ final VoidCallback? onTap;
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("BMI (Body Mass Index)",style: kMediumTextSemiBold,),
+                Text("BMI (Body Mass Index)",style: kMediumTextSemiBold(),),
                 const SizedBox(height: 5,),
                 Text("You have a normal weight",style: kSmallTextRegular(Colors.white),)
               ],

@@ -30,7 +30,7 @@ class SleepBanner extends StatelessWidget {
             children: [
               Text(
                 "Last Night Sleep",
-                style: kMediumTextSemiBold,
+                style: kMediumTextSemiBold(),
               ),
               const SizedBox(
                 height: 5,
