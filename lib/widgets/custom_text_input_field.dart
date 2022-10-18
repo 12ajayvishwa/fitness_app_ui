@@ -17,6 +17,8 @@ class CustomTextFormField extends StatelessWidget {
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final int? maxLength;
+  final bool? readOnly;
+  final VoidCallback? onTap;
 
   const CustomTextFormField(
       {Key? key,
@@ -30,7 +32,7 @@ class CustomTextFormField extends StatelessWidget {
       this.textInputAction,
       this.prefixIcon,
       this.suffixIcon,
-      this.maxLength})
+      this.maxLength, this.readOnly, this.onTap})
       : super(key: key);
 
   @override
@@ -47,15 +49,19 @@ class CustomTextFormField extends StatelessWidget {
           ),
         ),
         TextFormField(
+          
           cursorHeight: 22,
           cursorColor: kGrayColor2,
           style: kMediumTextRegular(kBlackColor),
+          readOnly: readOnly!,
+          onTap: onTap,
           controller: controller,
           validator: validator,
           textInputAction: textInputAction,
           keyboardType: textInputType,
           obscureText: obsecureText ?? false,
           maxLength: maxLength,
+          
           decoration: inputDecoration(kBorderColor,hintText!,prefixIcon: prefixIcon,suffixIcon: suffixIcon,),
           
         )

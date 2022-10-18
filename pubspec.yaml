@@ -43,6 +43,8 @@ dependencies:
   gradient_borders: ^0.2.0
   fl_chart: ^0.35.0
   syncfusion_flutter_charts: ^20.3.49
+  intl: ^0.17.0
+  numberpicker: ^2.1.1
 
 dev_dependencies:
   flutter_test:
