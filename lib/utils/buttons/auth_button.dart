@@ -33,9 +33,9 @@ class AuthButton extends StatelessWidget {
             gradient: const LinearGradient(colors: [kBrandColor1, kBrandColor2]),
             boxShadow: [
               BoxShadow(
-                  color: const Color(0xFF95ADFE).withOpacity(0.3),
-                  offset: const Offset(0, 10),
-                  blurRadius: 10)
+                  color: const Color(0xFF95ADFE).withOpacity(0.2),
+                  offset: const Offset(0, 8),
+                  blurRadius: 8)
             ]),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,

@@ -14,33 +14,11 @@ class Registration2 extends StatefulWidget {
 }
 
 class _Registration2State extends State<Registration2> {
+  final CarouselController _controller = CarouselController();
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
-    final List<Widget> slideList = [
-      Slides(
-        size: size,
-        image: "assets/images/slide_vector.svg",
-        title: "Improve Shape",
-        subtitle:
-            "I have a low amount of body fat \nand need / want to build \nmore muscle",
-      ),
-      Slides(
-        size: size,
-        image: "assets/images/slide_vector2.svg",
-        title: "Lean & Tone",
-        subtitle:
-            "I’m “skinny fat”. look thin but have \nno shape. I want to add learn \nmuscle in the right way",
-      ),
-      Slides(
-        size: size,
-        image: "assets/images/slide_vector3.svg",
-        title: "Lose a Fat",
-        subtitle:
-            "I have over 20 lbs to lose. I want to \ndrop all this fat and gain muscle \nmass",
-      )
-    ];
 
     return Scaffold(
       body: SizedBox(
@@ -68,20 +46,41 @@ class _Registration2State extends State<Registration2> {
                 )),
             Positioned(
                 child: CarouselSlider(
-                    items: [],
+                    carouselController: _controller,
+                    items: [
+                      Slides(
+                        size: size,
+                        image: "assets/images/slide_vector.svg",
+                        title: "Improve Shape",
+                        subtitle:
+                            "I have a low amount of body fat \nand need / want to build \nmore muscle",
+                      ),
+                      Slides(
+                        size: size,
+                        image: "assets/images/slide_vector2.svg",
+                        title: "Lean & Tone",
+                        subtitle:
+                            "I’m “skinny fat”. look thin but have \nno shape. I want to add learn \nmuscle in the right way",
+                      ),
+                      Slides(
+                        size: size,
+                        image: "assets/images/slide_vector3.svg",
+                        title: "Lose a Fat",
+                        subtitle:
+                            "I have over 20 lbs to lose. I want to \ndrop all this fat and gain muscle \nmass",
+                      )
+                    ],
                     options: CarouselOptions(
                         autoPlay: true,
-                        height: size.height * 0.6,
+                        height: size.height * 0.7,
                         autoPlayCurve: Curves.easeInOut,
                         enlargeCenterPage: true,
-                        viewportFraction: 0.75,
+                        viewportFraction: 0.78,
                         pauseAutoPlayOnTouch: true))),
             Positioned(
                 bottom: size.height * 0.06,
                 child: AuthButton(
-                  onTap: () {
-                    print("ok");
-                  },
+                  onTap: () {},
                   text: "Confirm",
                   size: size,
                 ))
@@ -107,41 +106,55 @@ class Slides extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: size.height * 0.6,
-      width: size.width * 0.7,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(22),
-          gradient: const LinearGradient(
-            colors: [kBrandColor1, kBrandColor2],
-          )),
+    return SizedBox(
+      height: size.height * 0.7,
+      width: size.width * 0.75,
       child: Stack(alignment: Alignment.center, children: [
-        Positioned(top: size.height * 0.04, child: SvgPicture.asset(image)),
-        Positioned(
-            bottom: size.height * 0.12,
-            child: Column(
-              children: [
-                Text(
-                  title,
-                  style: kMediumTextSemiBold(color: const Color(0xFFFFFFFF)),
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Container(
-                  height: 1.5,
-                  width: size.height * 0.06,
-                  color: const Color(0xFFF7F8F8),
-                )
-              ],
-            )),
-        Positioned(
-            bottom: size.height * 0.02,
-            child: Text(
-              subtitle!,
-              textAlign: TextAlign.center,
-              style: kSmallTextRegular(const Color(0xFFFFFFFF)),
-            ))
+        Container(
+          height: size.height * 0.62,
+          width: size.width * 0.75,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(22),
+              gradient: const LinearGradient(
+                colors: [kBrandColor1, kBrandColor2],
+              ),
+              boxShadow: [
+                BoxShadow(
+                    color: const Color(0xFFC58BF2).withOpacity(0.2),
+                    offset: const Offset(0, 8),
+                    blurRadius: 6,
+                    spreadRadius: 2)
+              ]),
+          child: Stack(alignment: Alignment.center, children: [
+            Positioned(top: size.height * 0.04, child: SvgPicture.asset(image)),
+            Positioned(
+                bottom: size.height * 0.12,
+                child: Column(
+                  children: [
+                    Text(
+                      title,
+                      style:
+                          kMediumTextSemiBold(color: const Color(0xFFFFFFFF)),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Container(
+                      height: 1.5,
+                      width: size.height * 0.06,
+                      color: const Color(0xFFF7F8F8),
+                    )
+                  ],
+                )),
+            Positioned(
+                bottom: size.height * 0.02,
+                child: Text(
+                  subtitle!,
+                  textAlign: TextAlign.center,
+                  style: kSmallTextRegular(const Color(0xFFFFFFFF)),
+                ))
+          ]),
+        ),
       ]),
     );
   }

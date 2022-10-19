@@ -32,7 +32,9 @@ class CustomTextFormField extends StatelessWidget {
       this.textInputAction,
       this.prefixIcon,
       this.suffixIcon,
-      this.maxLength, this.readOnly, this.onTap})
+      this.maxLength,
+      this.readOnly,
+      this.onTap})
       : super(key: key);
 
   @override
@@ -49,7 +51,6 @@ class CustomTextFormField extends StatelessWidget {
           ),
         ),
         TextFormField(
-          
           cursorHeight: 22,
           cursorColor: kGrayColor2,
           style: kMediumTextRegular(kBlackColor),
@@ -61,9 +62,12 @@ class CustomTextFormField extends StatelessWidget {
           keyboardType: textInputType,
           obscureText: obsecureText ?? false,
           maxLength: maxLength,
-          
-          decoration: inputDecoration(kBorderColor,hintText!,prefixIcon: prefixIcon,suffixIcon: suffixIcon,),
-          
+          decoration: inputDecoration(
+            kBorderColor,
+            hintText!,
+            prefixIcon: prefixIcon,
+            suffixIcon: suffixIcon,
+          ),
         )
       ],
     );

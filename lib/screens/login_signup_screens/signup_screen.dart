@@ -200,6 +200,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   controller: firstNameController,
                   validator: nameValidator,
                   hintText: "First Name",
+                  readOnly: false,
                   textInputAction: TextInputAction.next,
                   textInputType: TextInputType.name,
                   prefixIcon: SvgPicture.asset(
@@ -214,6 +215,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   controller: lastNameController,
                   validator: nameValidator,
                   hintText: "Last Name",
+                  readOnly: false,
                   textInputAction: TextInputAction.next,
                   textInputType: TextInputType.name,
                   prefixIcon: SvgPicture.asset(
@@ -228,6 +230,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   controller: emailController,
                   validator: emailValidator,
                   hintText: "Email",
+                  readOnly: false,
                   textInputAction: TextInputAction.next,
                   textInputType: TextInputType.emailAddress,
                   prefixIcon: SvgPicture.asset(
@@ -242,6 +245,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   controller: passwordController,
                   validator: passwordValidator,
                   hintText: "Password",
+                  readOnly: false,
                   obsecureText: isVisible,
                   textInputAction: TextInputAction.done,
                   textInputType: TextInputType.text,
