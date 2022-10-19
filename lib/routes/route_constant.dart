@@ -1,3 +1,4 @@
+import 'package:fitness_ui/screens/home/dashboard.dart';
 import 'package:fitness_ui/routes/custom_route.dart';
 import 'package:fitness_ui/screens/complete_profile/completed_profile_screen.dart';
 import 'package:fitness_ui/screens/complete_profile/registration_1.dart';
@@ -26,6 +27,8 @@ class CustomRouter{
       return MaterialPageRoute(builder: (_) => const LoginScreen());
       case completedProfileScreenRoute:
       return MaterialPageRoute(builder: (_) => const CompletedProfileScreen());
+      case dashboardScreenRoute:
+      return MaterialPageRoute(builder: (_) => const Dashboard());
       default:
       return MaterialPageRoute(builder: (_) => const ScreenNotFound());
       

@@ -16,7 +16,7 @@ class DailyAction extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         gradient: LinearGradient(
-          colors: [kBrandColor1.withOpacity(0.4),kBrandColor2.withOpacity(0.4)])
+          colors: [kBrandColor1.withOpacity(0.3),kBrandColor2.withOpacity(0.4)])
       ),
       child: Padding(
         padding: const EdgeInsets.only(left: 20,right: 20),

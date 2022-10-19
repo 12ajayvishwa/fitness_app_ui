@@ -1,3 +1,4 @@
+import 'package:fitness_ui/routes/custom_route.dart';
 import 'package:fitness_ui/utils/buttons/auth_button.dart';
 import 'package:fitness_ui/utils/text_style.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,9 @@ class _CompletedProfileScreenState extends State<CompletedProfileScreen> {
         child: Stack(alignment: Alignment.center, children: [
           Positioned(
               bottom: size.height * 0.06,
-              child: AuthButton(text: "Go To Home", onTap: () {}, size: size)),
+              child: AuthButton(text: "Go To Home", onTap: () {
+                Navigator.pushNamed(context, dashboardScreenRoute);
+              }, size: size)),
           Positioned(top: size.height * 0.130, child: centerImage(size)),
           Positioned(
               bottom: size.height * 0.3,

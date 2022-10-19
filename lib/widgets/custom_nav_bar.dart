@@ -21,9 +21,10 @@ class CustomBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(alignment: Alignment.center, children: [
-      SizedBox(
+      Container(
         height: size.height * 0.13,
         width: size.width,
+        color: Colors.transparent,
       ),
       Positioned(
           bottom: 0,
