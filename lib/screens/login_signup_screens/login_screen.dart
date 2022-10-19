@@ -57,13 +57,14 @@ class _LoginScreenState extends State<LoginScreen> {
           Positioned(
               bottom: size.height * 0.220,
               child: AuthButton(
-                  text: "Register",
+                  text: "Login",
                   onTap: () {
                     if (formKey.currentState!.validate()) {
                       print(emailController.text);
                       print(passwordController.text);
                     }
                   },
+                  svgPicture1: "assets/icons/bold/Login.svg",
                   size: size)),
           Positioned(
               bottom: size.height * 0.161,
