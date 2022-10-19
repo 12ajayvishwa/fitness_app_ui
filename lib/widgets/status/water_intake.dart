@@ -1,10 +1,6 @@
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:fitness_ui/widgets/status/water_intake_timeline.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
 import '../../utils/gradient_text_color.dart';
 import '../../utils/text_style.dart';
 
@@ -27,8 +23,8 @@ class _WaterIntakeState extends State<WaterIntake> {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-                color: Color(0xFF1D1617).withOpacity(0.15),
-                offset: Offset(1, 4),
+                color: const Color(0xFF1D1617).withOpacity(0.15),
+                offset: const Offset(1, 4),
                 spreadRadius: 4,
                 blurRadius: 6),
           ]),

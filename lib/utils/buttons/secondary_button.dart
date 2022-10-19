@@ -1,6 +1,5 @@
 import 'package:fitness_ui/utils/text_style.dart';
 import 'package:flutter/material.dart';
-import '../colors.dart';
 
 class SecondaryButton extends StatelessWidget {
   final Size size;

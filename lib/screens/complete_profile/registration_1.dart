@@ -1,3 +1,5 @@
+
+import 'package:fitness_ui/routes/custom_route.dart';
 import 'package:fitness_ui/utils/buttons/auth_button.dart';
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:fitness_ui/utils/input_field_decoration.dart';
@@ -46,28 +48,24 @@ class _RegistrationOneState extends State<RegistrationOne> {
                 textButtonTheme: TextButtonThemeData(
                     style: TextButton.styleFrom(
                         primary: Colors.red,
-                        textStyle: TextStyle(fontFamily: "Poppins")))),
+                        textStyle: const TextStyle(fontFamily: "Poppins")))),
             child: child!);
       },
     );
     if (pickedDate != null) {
-      print(pickedDate);
       String formattedDate = DateFormat('dd-MM-yyyy').format(pickedDate);
-      print(formattedDate);
 
       setState(() {
         dobController.text = formattedDate;
       });
-    } else {
-      print("Please select date");
     }
   }
 
   @override
   void initState() {
     super.initState();
-    
   }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -105,18 +103,22 @@ class _RegistrationOneState extends State<RegistrationOne> {
                       )
                     ],
                   )),
-              Positioned(bottom: size.height * 0.09, child: formSection(size,(value) {
+              Positioned(
+                  bottom: size.height * 0.09,
+                  child: formSection(
+                    size,
+                    (value) {
                       setState(() {
-                       selectedWeight = value;
-                       
+                        selectedWeight = value;
                       });
-                    },)),
+                    },
+                  )),
               Positioned(
                   bottom: size.height * 0.05,
                   child: AuthButton(
                     text: "Next",
                     onTap: () {
-                      print("ok");
+                      Navigator.pushNamed(context, registration2ScreenRoute);
                     },
                     size: size,
                     svgPicture2: "assets/icons/light/Arrow - Right 2.svg",
@@ -128,7 +130,7 @@ class _RegistrationOneState extends State<RegistrationOne> {
     );
   }
 
-  formSection(Size size,void Function(int) onChanged) {
+  formSection(Size size, void Function(int) onChanged) {
     double height = 15;
     return Padding(
       padding: const EdgeInsets.all(10.0),
@@ -155,7 +157,7 @@ class _RegistrationOneState extends State<RegistrationOne> {
               height: height,
             ),
             CustomTextFormField(
-             controller: dobController,
+              controller: dobController,
               readOnly: true,
               onTap: selectDob,
               hintText: "Date of Birth",
@@ -173,23 +175,29 @@ class _RegistrationOneState extends State<RegistrationOne> {
                   height: size.height * 0.06,
                   width: size.width * 0.75,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(14),
-                    color:kBorderColor
-                  ),
+                      borderRadius: BorderRadius.circular(14),
+                      color: kBorderColor),
                   child: Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 15,right: 13),
-                        child: SvgPicture.asset("assets/icons/light/weight.svg",color: kGrayColor1,),
+                        padding: const EdgeInsets.only(left: 15, right: 13),
+                        child: SvgPicture.asset(
+                          "assets/icons/light/weight.svg",
+                          color: kGrayColor1,
+                        ),
                       ),
-                      selectedWeight == 0?
-                      Text("Your Weight",style: kLargeTextRegular(kGrayColor1),):
-                      Text("$selectedWeight KG",style: kLargeTextRegular(kBlackColor),)
+                      selectedWeight == 0
+                          ? Text(
+                              "Your Weight",
+                              style: kLargeTextRegular(kGrayColor1),
+                            )
+                          : Text(
+                              "$selectedWeight KG",
+                              style: kLargeTextRegular(kBlackColor),
+                            )
                     ],
                   ),
-                  
-                  
-                  
+
                   // CustomTextFormField(
                   //   controller: weightController,
                   //   validator: (value) {
@@ -212,11 +220,11 @@ class _RegistrationOneState extends State<RegistrationOne> {
                     text: "KG",
                     onTap: () {
                       showDialog(
-                        context: context, 
+                        context: context,
                         builder: (context) {
                           return dialogBox(onChanged);
-                        },);
-                      
+                        },
+                      );
                     })
               ],
             ),
@@ -225,7 +233,7 @@ class _RegistrationOneState extends State<RegistrationOne> {
             ),
             Row(
               children: [
-                Container(
+                SizedBox(
                   height: size.height * 0.06,
                   width: size.width * 0.75,
                   child: CustomTextFormField(
@@ -253,44 +261,38 @@ class _RegistrationOneState extends State<RegistrationOne> {
   }
 
   dialogBox(void Function(int) onChanged) {
-    
     return AlertDialog(
-      
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-        elevation: 2,
-        content: StatefulBuilder(builder: (context, setState) {
-          return SizedBox(
-            height: 300,
-            child: Column(
-              children: [
-                NumberPicker(
-                    minValue: 0,
-                    maxValue: 220,
-                    itemCount: 5,
-                    value: selectedWeight,
-                    onChanged: onChanged
-                    
-                    ),
-                    
-                    
-              ],
-            ),
-          );
-        }),
-        actions: [
-          TextButton(
-            child: Text("OK"),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          )
-        ],
-
-        // Container(
-        //   height: size.height*0.8,
-        //   width: size.width*0.3,
-        //   child: Text("")),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      elevation: 2,
+      content: StatefulBuilder(builder: (context, setState) {
+        return SizedBox(
+          height: 300,
+          child: Column(
+            children: [
+              NumberPicker(
+                  minValue: 0,
+                  maxValue: 220,
+                  itemCount: 5,
+                  value: selectedWeight,
+                  onChanged: onChanged),
+            ],
+          ),
         );
+      }),
+      actions: [
+        TextButton(
+          child: const Text("OK"),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        )
+      ],
+
+      // Container(
+      //   height: size.height*0.8,
+      //   width: size.width*0.3,
+      //   child: Text("")),
+    );
   }
 
   genderPicker(Size size) {

@@ -1,6 +1,5 @@
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:fitness_ui/utils/text_style.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LableButton extends StatelessWidget {

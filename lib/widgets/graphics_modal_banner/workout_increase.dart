@@ -1,11 +1,7 @@
 import 'dart:core';
-
 import 'package:fitness_ui/utils/colors.dart';
-import 'package:fitness_ui/widgets/animated_indicator.dart';
 import 'package:fitness_ui/widgets/progress_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class WorkoutIncrease extends StatelessWidget {
@@ -40,7 +36,7 @@ class WorkoutIncrease extends StatelessWidget {
             top: 10,
             left: 10,
             right: 10,
-            child: Container(
+            child: SizedBox(
               width: size.width * 0.5,
               child: Center(
                 child: Row(

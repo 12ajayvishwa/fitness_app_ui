@@ -1,9 +1,7 @@
-import 'package:fitness_ui/screens/onboarding_screen/onboarding_screen.dart';
+import 'package:fitness_ui/routes/custom_route.dart';
 import 'package:fitness_ui/utils/buttons/auth_button.dart';
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -37,10 +35,7 @@ class WelcomeScreen extends StatelessWidget {
                 bottom: 25,
                 child: AuthButton(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => const OnboardingScreen()));
+                    Navigator.pushNamed(context, onboardingScreenRoute);
                   },
                   text: "Get Started",
                   size: size,

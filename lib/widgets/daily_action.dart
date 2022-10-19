@@ -1,6 +1,3 @@
-
-
-import 'package:fitness_ui/utils/buttons/secondary_button.dart';
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -59,7 +56,7 @@ class Button extends StatelessWidget {
               begin: Alignment.centerRight,
               end: Alignment.centerLeft,
               colors: [color2,color1])),
-      child: Center(child: Text(text, style: TextStyle(fontFamily: "Poppins",fontSize: 14,fontWeight: FontWeight.w400,color: Colors.white,letterSpacing: 1,)),
+      child: Center(child: Text(text, style: const TextStyle(fontFamily: "Poppins",fontSize: 14,fontWeight: FontWeight.w400,color: Colors.white,letterSpacing: 1,)),
     ));
   }
 }

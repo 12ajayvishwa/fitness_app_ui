@@ -1,8 +1,6 @@
 import 'package:fitness_ui/utils/gradient_text_color.dart';
 import 'package:flutter/material.dart';
-import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:timeline_tile/timeline_tile.dart';
-
 import '../../utils/colors.dart';
 
 class WaterIntakeTimeLine extends StatefulWidget {
@@ -18,7 +16,7 @@ class WaterIntakeTimeLine extends StatefulWidget {
 class _WaterIntakeTimeLineState extends State<WaterIntakeTimeLine> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: widget.size.height * 0.28,
       width: widget.size.width * 0.28,
       child: Stack(alignment: Alignment.center, children: [

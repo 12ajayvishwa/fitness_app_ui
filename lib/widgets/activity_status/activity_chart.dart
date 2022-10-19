@@ -13,7 +13,7 @@ class _ActivityChartState extends State<ActivityChart> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    var textStyle = TextStyle(
+    var textStyle = const TextStyle(
         fontFamily: "Poppins",
         fontWeight: FontWeight.w400,
         fontSize: 12,
@@ -26,7 +26,7 @@ class _ActivityChartState extends State<ActivityChart> {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-                color: Color(0xFF1D1617).withOpacity(0.1),
+                color: const Color(0xFF1D1617).withOpacity(0.1),
                 spreadRadius: 2,
                 blurRadius: 2)
           ]),

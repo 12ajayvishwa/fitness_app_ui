@@ -1,8 +1,8 @@
+// ignore_for_file: avoid_print
+
 import 'package:fitness_ui/utils/text_style.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import '../../utils/buttons/secondary_button.dart';
 import '../../utils/colors.dart';
 

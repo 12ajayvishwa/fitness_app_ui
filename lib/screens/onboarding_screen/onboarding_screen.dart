@@ -1,4 +1,4 @@
-import 'package:fitness_ui/home.dart';
+import 'package:fitness_ui/routes/custom_route.dart';
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:fitness_ui/utils/text_style.dart';
 import 'package:fitness_ui/widgets/animated_indicator.dart';
@@ -17,7 +17,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   void nextPage() {
     pageController.nextPage(
-        duration: const Duration(seconds:4), curve: Curves.ease);
+        duration: const Duration(seconds:3), curve: Curves.easeInOut);
   }
 
   @override
@@ -33,6 +33,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           title: "Track Your Goal",
           subTitle: "Don't worry if you have trouble determining your goals, We can help you determine your goals and track your goals",
           onNext: nextPage,
+          
           curveSize: 25.00,
           path: "assets/images/First_Slide.png",
         ),
@@ -58,7 +59,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
          subTitle: "Improve the quality of your sleep with us, good quality sleep can bring a good mood in the morning",
          onNext: (){},
           goNext: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => Home()));
+            Navigator.pushNamed(context, signupScreenRoute);
           },
           curveSize: 100.00,
           path: "assets/images/Fourth_Slide.png",
@@ -88,7 +89,7 @@ class Slide extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
         height: size.height,
         width: size.width,
         child: Stack(
@@ -108,7 +109,7 @@ class Slide extends StatelessWidget {
             Positioned(
               bottom: size.height * 0.2,
               left: 20,
-              child: Container(
+              child: SizedBox(
                 height: size.height*0.23,
                 width: size.width*0.95,
                 
@@ -116,7 +117,7 @@ class Slide extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(title,style: kTitleH2Bold,),
-                  SizedBox(height: 20,),
+                  const SizedBox(height: 20,),
                   Text(subTitle,textAlign: TextAlign.start,style: kMediumTextRegular(kGrayColor1),)
                 ],
               ),
@@ -142,7 +143,7 @@ class ProgressButton extends StatelessWidget {
         child: Stack(
           children: [
             AnimatedIndicator(
-              duration: const Duration(seconds: 4),
+              duration: const Duration(seconds: 3),
               callback: onNext,
               size: 75,
               curveSize: curveSize,

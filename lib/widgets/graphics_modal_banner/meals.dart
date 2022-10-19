@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../../utils/colors.dart';
 import '../progress_bar.dart';
 
@@ -33,7 +30,7 @@ class Meals extends StatelessWidget {
             left: 10,
             right: 10,
             bottom: 10,
-            child: Container(
+            child: SizedBox(
               width: size.width * 0.5,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

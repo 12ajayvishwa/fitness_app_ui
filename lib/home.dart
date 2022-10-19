@@ -1,45 +1,20 @@
 import 'package:fitness_ui/utils/buttons/custom_dropdown_button.dart';
-import 'package:fitness_ui/utils/buttons/secondary_button.dart';
 import 'package:fitness_ui/utils/colors.dart';
-import 'package:fitness_ui/utils/text_style.dart';
-import 'package:fitness_ui/widgets/activity_status/workout-2.dart';
-import 'package:fitness_ui/widgets/banner_components/home_banner.dart';
-import 'package:fitness_ui/widgets/banner_components/photos_reminder_banner.dart';
-import 'package:fitness_ui/widgets/banner_components/progress_photo_banner.dart';
-import 'package:fitness_ui/widgets/banner_components/sleep_schedule_banner.dart';
-import 'package:fitness_ui/widgets/card_components/latest_workout_card.dart';
-import 'package:fitness_ui/widgets/card_components/upcoming_workout_card.dart';
+import 'package:fitness_ui/widgets/activity_status/activity_chart.dart';
+import 'package:fitness_ui/widgets/activity_status/workout_2.dart';
 import 'package:fitness_ui/widgets/custom_nav_bar.dart';
-import 'package:fitness_ui/widgets/custom_text_input_field.dart';
-import 'package:fitness_ui/widgets/graphics_modal_banner/results.dart';
-import 'package:fitness_ui/widgets/graphics_modal_banner/sleeps.dart';
-import 'package:fitness_ui/widgets/lable_button.dart';
-import 'package:fitness_ui/widgets/progress_bar.dart';
 import 'package:fitness_ui/widgets/search_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-import 'utils/buttons/add_camera_button.dart';
-import 'utils/buttons/auth_button.dart';
-import 'utils/buttons/onboarding_button.dart';
-import 'widgets/activity_status/activity_chart.dart';
-import 'widgets/status/heart_rate.dart';
 import 'widgets/activity_status/meal.dart';
 import 'widgets/activity_status/result.dart';
 import 'widgets/activity_status/sleep_chart.dart';
 import 'widgets/activity_status/workout.dart';
 import 'widgets/activity_time_line.dart';
-import 'widgets/banner_components/sleep_banner.dart';
-import 'widgets/banner_components/today_target_banner.dart';
-import 'widgets/daily_action.dart';
-import 'widgets/graphics_modal_banner/meals.dart';
-import 'widgets/graphics_modal_banner/workout_increase.dart';
-import 'widgets/search_bar.dart';
 import 'widgets/status/calories.dart';
 import 'widgets/status/sleep.dart';
 import 'widgets/status/water_intake.dart';
 import 'widgets/tab_bar.dart';
-import 'widgets/workout_schedule_modal.dart';
 import 'widgets/workout_train_section.dart';
 
 class Home extends StatefulWidget {
@@ -64,7 +39,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 230, 228, 228),
+      backgroundColor: const Color.fromARGB(255, 230, 228, 228),
       bottomNavigationBar: CustomBottomNavBar(
         size: size,
         svgIcon1: pageIndex == 0
@@ -119,11 +94,11 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 10,
             ),
-            WaterIntake(),
+            const WaterIntake(),
             const SizedBox(
               height: 10,
             ),
-            Sleep(),
+            const Sleep(),
             const SizedBox(
               height: 10,
             ),
@@ -135,7 +110,7 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 10,
             ),
-            WorkOutChart(),
+            const WorkOutChart(),
             // ActivityChart(size: size),
             const SizedBox(
               height: 10,
@@ -143,21 +118,21 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 10,
             ),
-            WorkOutChart2(),
+            const WorkOutChart2(),
             // ActivityChart(size: size),
             const SizedBox(
               height: 10,
             ),
 
-            Result(),
+            const Result(),
             const SizedBox(
               height: 10,
             ),
-            Meal(),
+            const Meal(),
             const SizedBox(
               height: 10,
             ),
-            SleepChart(),
+            const SleepChart(),
             const SizedBox(
               height: 10,
             ),

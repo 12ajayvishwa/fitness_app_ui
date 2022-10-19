@@ -54,12 +54,12 @@ class _CompletedProfileScreenState extends State<CompletedProfileScreen> {
       child: Stack(alignment: Alignment.center, children: [
         SvgPicture.asset("assets/images/complete-profile.svg"),
         Positioned(
-            top: size.height * 0.06,
-            right: size.width * 0.150,
+            top: 52,
+            right: 60,
             child:
                 SvgPicture.asset("assets/images/complete-profile-lady_2_.svg")),
         Positioned(
-            top: size.height * 0.03,
+            top: 25,
             left: size.width * 0.08,
             child:
                 SvgPicture.asset("assets/images/complete-profile-man_2_.svg")),

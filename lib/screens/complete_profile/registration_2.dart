@@ -1,5 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:fitness_ui/screens/onboarding_screen/onboarding_screen.dart';
+import 'package:fitness_ui/routes/custom_route.dart';
 import 'package:fitness_ui/utils/buttons/auth_button.dart';
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:fitness_ui/utils/text_style.dart';
@@ -80,7 +80,9 @@ class _Registration2State extends State<Registration2> {
             Positioned(
                 bottom: size.height * 0.06,
                 child: AuthButton(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, loginScreenRoute);
+                  },
                   text: "Confirm",
                   size: size,
                 ))

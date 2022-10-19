@@ -1,9 +1,6 @@
 import 'package:fitness_ui/utils/colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-import '../utils/input_field_decoration.dart';
 import '../utils/search_filed_decoration.dart';
 
 class SearchBar extends StatelessWidget {

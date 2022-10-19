@@ -14,7 +14,7 @@ class _SleepChartState extends State<SleepChart> {
   void startCreatingDemoData() async {
     for (int i = 0; i < 7; i++) {
       if (i == 0) continue;
-      await Future.delayed((Duration(seconds: 1))).then((value) {
+      await Future.delayed((const Duration(seconds: 1))).then((value) {
         Random random = Random();
 
         flspots.add(FlSpot(

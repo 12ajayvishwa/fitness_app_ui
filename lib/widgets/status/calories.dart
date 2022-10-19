@@ -23,8 +23,8 @@ class _CaloriesState extends State<Calories> {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-                color: Color(0xFF1D1617).withOpacity(0.2),
-                offset: Offset(1, 4),
+                color: const Color(0xFF1D1617).withOpacity(0.2),
+                offset: const Offset(1, 4),
                 spreadRadius: 4,
                 blurRadius: 6)
           ]),
@@ -49,7 +49,7 @@ class _CaloriesState extends State<Calories> {
                           foreground: Paint()..shader = linearGradient2))
                 ],
               )),
-          Positioned(bottom: 15, child: CaloriesProgressBar())
+          const Positioned(bottom: 15, child: CaloriesProgressBar())
         ],
       ),
     );
@@ -57,9 +57,11 @@ class _CaloriesState extends State<Calories> {
 }
 
 class CaloriesProgressBar extends StatelessWidget {
+  const CaloriesProgressBar({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 66,
       width: 66,
       child: GFProgressBar(

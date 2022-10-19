@@ -1,3 +1,6 @@
+// ignore_for_file: avoid_print
+
+import 'package:fitness_ui/routes/custom_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -26,115 +29,119 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: SizedBox(
-        height: size.height,
-        width: size.width,
-        child: Stack(alignment: Alignment.center, children: [
-          Positioned(
-              top: size.height * 0.05,
-              child: Column(
-                children: [
-                  Text(
-                    "Hey there,",
-                    style: kLargeTextRegular(const Color(0xFF1D1617)),
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    "Welcome Back",
-                    style: kTitleH4Bold(const Color(0xFF1D1617)),
-                  )
-                ],
-              )),
-          Positioned(
-              top: size.height * 0.129,
-              left: size.width * 0.03,
-              right: size.width * 0.03,
-              child: formComponent(
-                size,
-              )),
-          Positioned(
-              bottom: size.height * 0.220,
-              child: AuthButton(
-                  text: "Login",
-                  onTap: () {
-                    if (formKey.currentState!.validate()) {
-                      print(emailController.text);
-                      print(passwordController.text);
-                    }
-                  },
-                  svgPicture1: "assets/icons/bold/Login.svg",
-                  size: size)),
-          Positioned(
-              bottom: size.height * 0.161,
-              child: SizedBox(
-                height: 30,
-                width: size.width * 0.8,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: size.height,
+          width: size.width,
+          child: Stack(alignment: Alignment.center, children: [
+            Positioned(
+                top: size.height * 0.05,
+                child: Column(
                   children: [
-                    Container(
-                      height: 2,
-                      width: size.width * 0.35,
-                      color: kGrayColor3,
+                    Text(
+                      "Hey there,",
+                      style: kLargeTextRegular(const Color(0xFF1D1617)),
                     ),
-                    const Text(
-                      " Or ",
-                      style: TextStyle(fontFamily: "Poppins", fontSize: 12),
+                    const SizedBox(
+                      height: 5,
                     ),
-                    Container(
-                      height: 2,
-                      width: size.width * 0.35,
-                      color: kGrayColor3,
-                    ),
+                    Text(
+                      "Welcome Back",
+                      style: kTitleH4Bold(const Color(0xFF1D1617)),
+                    )
                   ],
-                ),
-              )),
-          Positioned(
-              bottom: size.height * 0.085,
-              child: Row(
-                children: [
-                  socialMedia(Image.asset("assets/images/google.png"), () {
-                    print("ok");
-                  }),
-                  const SizedBox(
-                    width: 45,
-                  ),
-                  socialMedia(SvgPicture.asset("assets/images/facebook.svg"),
-                      () {
-                    print("ok");
-                  })
-                ],
-              )),
-          Positioned(
-              bottom: size.height * 0.035,
-              child: Row(
-                children: [
-                  const Text(
-                    "Don’t have an account yet? ",
-                    style: TextStyle(
-                        fontFamily: "Poppins",
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14,
-                        color: Colors.black),
-                  ),
-                  InkWell(
+                )),
+            Positioned(
+                top: size.height * 0.129,
+                left: size.width * 0.03,
+                right: size.width * 0.03,
+                child: formComponent(
+                  size,
+                )),
+            Positioned(
+                bottom: size.height * 0.220,
+                child: AuthButton(
+                    text: "Login",
                     onTap: () {
-                      print("ok");
+                      if (formKey.currentState!.validate()) {
+                        print(emailController.text);
+                        print(passwordController.text);
+                        Navigator.pushNamed(context, completedProfileScreenRoute);
+                      }
                     },
-                    child: Text(
-                      " Register",
+                    svgPicture1: "assets/icons/bold/Login.svg",
+                  
+                    size: size)),
+            Positioned(
+                bottom: size.height * 0.161,
+                child: SizedBox(
+                  height: 30,
+                  width: size.width * 0.8,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        height: 2,
+                        width: size.width * 0.35,
+                        color: kGrayColor3,
+                      ),
+                      const Text(
+                        " Or ",
+                        style: TextStyle(fontFamily: "Poppins", fontSize: 12),
+                      ),
+                      Container(
+                        height: 2,
+                        width: size.width * 0.35,
+                        color: kGrayColor3,
+                      ),
+                    ],
+                  ),
+                )),
+            Positioned(
+                bottom: size.height * 0.085,
+                child: Row(
+                  children: [
+                    socialMedia(Image.asset("assets/images/google.png"), () {
+                      print("ok");
+                    }),
+                    const SizedBox(
+                      width: 45,
+                    ),
+                    socialMedia(SvgPicture.asset("assets/images/facebook.svg"),
+                        () {
+                      print("ok");
+                    })
+                  ],
+                )),
+            Positioned(
+                bottom: size.height * 0.035,
+                child: Row(
+                  children: [
+                    const Text(
+                      "Don’t have an account yet? ",
                       style: TextStyle(
                           fontFamily: "Poppins",
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
-                          foreground: Paint()..shader = linearGradient1),
+                          color: Colors.black),
                     ),
-                  )
-                ],
-              ))
-        ]),
+                    InkWell(
+                      onTap: () {
+                        print("ok");
+                      },
+                      child: Text(
+                        " Register",
+                        style: TextStyle(
+                            fontFamily: "Poppins",
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14,
+                            foreground: Paint()..shader = linearGradient1),
+                      ),
+                    )
+                  ],
+                ))
+          ]),
+        ),
       ),
     );
   }

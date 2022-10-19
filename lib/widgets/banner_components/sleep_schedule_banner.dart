@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../../utils/buttons/secondary_button.dart';
 import '../../utils/colors.dart';
 import '../../utils/text_style.dart';
@@ -16,10 +13,10 @@ final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-     final Shader linearGradient = LinearGradient(
+     final Shader linearGradient = const LinearGradient(
   colors: <Color>[
     kBrandColor1, kBrandColor1],
-).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
+).createShader(const Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
     return Container(
       height: size.height*0.20,
       width: size.width*0.95,
@@ -49,6 +46,7 @@ final VoidCallback? onTap;
               Positioned(
                 bottom: 26,
                 left: 20,
+                // ignore: avoid_print
                 child: SecondaryButton(size: size, text: "Learn More", onTap: (){print("hi");},color1: kSecondryColor1,color2: kSecondryColor2,))
       ]),
     );

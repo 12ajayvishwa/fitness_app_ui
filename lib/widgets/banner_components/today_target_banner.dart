@@ -56,9 +56,9 @@ class TargetCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Shader linearGradient = LinearGradient(
+    final Shader linearGradient = const LinearGradient(
   colors: <Color>[kSecondryColor1, kSecondryColor2],
-).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
+).createShader(const Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
     return Container(
       height: 60,
       width: 160,
@@ -80,7 +80,7 @@ class TargetCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(waterIntake!,style: TextStyle(fontFamily: "Poppins",fontSize: 14,fontWeight: FontWeight.w500,foreground: Paint()..shader = linearGradient)),
-              Text(title,style: TextStyle(fontFamily: "Poppins",fontSize: 12,color: Color(0xFF7B6F72),fontWeight: FontWeight.w400),)
+              Text(title,style: const TextStyle(fontFamily: "Poppins",fontSize: 12,color: Color(0xFF7B6F72),fontWeight: FontWeight.w400),)
             ],
           )
         ],

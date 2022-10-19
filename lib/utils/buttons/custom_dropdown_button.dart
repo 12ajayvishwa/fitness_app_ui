@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -36,7 +38,7 @@ class _CustomDropdownButtonState extends State<CustomDropdownButton> {
         alignment: Alignment.center,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50),
-            gradient: LinearGradient(colors: [kBrandColor1, kBrandColor2])),
+            gradient: LinearGradient(colors: const [kBrandColor1, kBrandColor2])),
         child: Center(
           child: DropdownButton(
             value: selectedValue,

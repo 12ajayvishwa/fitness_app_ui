@@ -1,12 +1,7 @@
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:fitness_ui/utils/text_style.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:getwidget/getwidget.dart';
-import 'package:gradient_progress_bar/gradient_progress_bar.dart';
-import 'package:percent_indicator/linear_percent_indicator.dart';
-
 import '../progress_bar.dart';
 
 class LatestWorkoutCard extends StatefulWidget {
@@ -37,13 +32,12 @@ class _LatestWorkoutCardState extends State<LatestWorkoutCard> {
       height: widget.size.height * 0.13,
       width: widget.size.width * 0.98,
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16)),
+          color: Colors.white, borderRadius: BorderRadius.circular(16)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
-            padding: const EdgeInsets.only(top:15.0,bottom: 15,left: 25),
+            padding: const EdgeInsets.only(top: 15.0, bottom: 15, left: 25),
             child: Container(
                 height: 70,
                 width: 70,
@@ -61,46 +55,50 @@ class _LatestWorkoutCardState extends State<LatestWorkoutCard> {
           ),
           Padding(
             padding: const EdgeInsets.only(right: 27),
-            child: Container(
-              
+            child: SizedBox(
               width: widget.size.width * 0.65,
               height: widget.size.height * 0.09,
               child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Positioned(
-                        top: 8,
-                        left: 12,
-                        child: Text(
-                          "Fullbody Workout",
-                          style: kSmallTextMedium(Colors.black),
+                alignment: Alignment.center,
+                children: [
+                  Positioned(
+                    top: 8,
+                    left: 12,
+                    child: Text(
+                      "Fullbody Workout",
+                      style: kSmallTextMedium(Colors.black),
+                    ),
+                  ),
+                  Positioned(
+                    top: 35,
+                    left: 12,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text("${widget.caloriesBurn} Calories Burn ",
+                            style:
+                                kCaptionTextRegular(const Color(0xFFA4A9AD))),
+                        Container(
+                          height: 10,
+                          width: 1,
+                          color: Colors.grey,
                         ),
-                      ),
-                      Positioned(
-                        top: 35,
-                        left: 12,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text("${widget.caloriesBurn} Calories Burn ",
-                                style:
-                                    kCaptionTextRegular(const Color(0xFFA4A9AD))),
-                            Container(
-                              height: 10,
-                              width: 1,
-                              color: Colors.grey,
-                            ),
-                            Text(" 20minutes",
-                                style:
-                                    kCaptionTextRegular(const Color(0xFFA4A9AD))),
-                          ],
-                        ),
-                      ),
-                    const Positioned(
+                        Text(" 20minutes",
+                            style:
+                                kCaptionTextRegular(const Color(0xFFA4A9AD))),
+                      ],
+                    ),
+                  ),
+                  const Positioned(
                       bottom: 0,
                       left: 7,
-                      child: ProgressBar(percent: 0.8,width: 209,lineHeight: 10,radius: 50,)
-                      
+                      child: ProgressBar(
+                        percent: 0.8,
+                        width: 209,
+                        lineHeight: 10,
+                        radius: 50,
+                      )
+
                       // LinearPercentIndicator(
                       //   width: 191.0,
                       //   lineHeight: 10.0,
@@ -111,9 +109,7 @@ class _LatestWorkoutCardState extends State<LatestWorkoutCard> {
                       //   progressColor: kBrandColor1,
                       //   barRadius: Radius.circular(50),
                       // ),
-                    ),
-                  
-                
+                      ),
                   Positioned(
                     right: 0,
                     child: Container(
@@ -121,7 +117,8 @@ class _LatestWorkoutCardState extends State<LatestWorkoutCard> {
                         width: 24,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          border: Border.all(color: kSecondryColor2, width: 1.5),
+                          border:
+                              Border.all(color: kSecondryColor2, width: 1.5),
                           // gradient: LinearGradient(colors: [
                           //       kSecondryColor1,
                           //       kSecondryColor2
@@ -141,5 +138,3 @@ class _LatestWorkoutCardState extends State<LatestWorkoutCard> {
     );
   }
 }
-
-

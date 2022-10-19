@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:fitness_ui/utils/buttons/secondary_button.dart';
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:fitness_ui/utils/text_style.dart';
@@ -18,7 +20,7 @@ final VoidCallback? onTap;
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(22),
         gradient: const LinearGradient(colors: [kBrandColor1,kBrandColor2]),
-        image: DecorationImage(image: AssetImage("assets/images/Dots.png"),fit: BoxFit.cover)),
+        image: const DecorationImage(image: AssetImage("assets/images/Dots.png"),fit: BoxFit.cover)),
       child: Stack(
         alignment: Alignment.center,
         children: [

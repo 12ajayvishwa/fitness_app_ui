@@ -32,7 +32,7 @@ class _SwitchTabBarState extends State<SwitchTabBar> {
             
           
           ),
-          tabs : [Tab(text:'Photos'),Tab(text:'Statics')]),
+          tabs : const [Tab(text:'Photos'),Tab(text:'Statics')]),
       ),
     );
   }

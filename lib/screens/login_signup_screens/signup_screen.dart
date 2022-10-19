@@ -1,3 +1,6 @@
+// ignore_for_file: avoid_print
+
+import 'package:fitness_ui/routes/custom_route.dart';
 import 'package:fitness_ui/utils/buttons/auth_button.dart';
 import 'package:fitness_ui/utils/gradient_text_color.dart';
 import 'package:fitness_ui/utils/text_style.dart';
@@ -70,7 +73,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     size,
                     Checkbox(
                         shape: RoundedRectangleBorder(
-                            side: BorderSide(color: kGrayColor2, width: 0.8),
+                            side: const BorderSide(color: kGrayColor2, width: 0.8),
                             borderRadius: BorderRadius.circular(5)),
                         activeColor: kBrandColor2,
                         value: termAndCondition,
@@ -87,6 +90,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         print(lastNameController.text);
                         print(emailController.text);
                         print(passwordController.text);
+                        Navigator.pushNamed(context, registrationOneScreenRoute);
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
@@ -183,6 +187,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
+  // ignore: non_constant_identifier_names
   formComponent(Size size, Widget Checkbox) {
     double height = 15;
     return Padding(
@@ -282,6 +287,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ));
   }
 
+  // ignore: non_constant_identifier_names
   Row checkBox(Widget Checkbox) {
     return Row(
       children: [

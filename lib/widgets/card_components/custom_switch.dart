@@ -24,6 +24,7 @@ class CustomSwitch extends StatefulWidget {
       : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _CustomSwitchState createState() => _CustomSwitchState();
 }
 
@@ -36,7 +37,7 @@ class _CustomSwitchState extends State<CustomSwitch>
   void initState() {
     super.initState();
     _animationController =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 60));
+        AnimationController(vsync: this, duration: const Duration(milliseconds: 60));
     _circleAnimation = AlignmentTween(
             begin: widget.value! ? Alignment.centerRight : Alignment.centerLeft,
             end: widget.value! ? Alignment.centerLeft : Alignment.centerRight)
@@ -70,7 +71,7 @@ class _CustomSwitchState extends State<CustomSwitch>
               //     ? widget.inactiveColor
               //     : widget.activeColor,
 
-              gradient: LinearGradient(
+              gradient: const LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 // You can set your own colors in here!
@@ -103,7 +104,7 @@ class _CustomSwitchState extends State<CustomSwitch>
                     child: Container(
                       width: 18.0,
                       height: 18.0,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           shape: BoxShape.circle, color: Colors.white),
                     ),
                   ),

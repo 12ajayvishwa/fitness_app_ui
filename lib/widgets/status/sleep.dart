@@ -15,8 +15,8 @@ class Sleep extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-                color: Color(0xFF1D1617).withOpacity(0.2),
-                offset: Offset(1, 4),
+                color: const Color(0xFF1D1617).withOpacity(0.2),
+                offset: const Offset(1, 4),
                 spreadRadius: 4,
                 blurRadius: 6)
           ]),
@@ -43,13 +43,13 @@ class Sleep extends StatelessWidget {
               )),
           Positioned(
               bottom: 15,
-              child: Container(
-                height: 65,
-                width: 150,
-                
+              child: SizedBox(
+                  height: 65,
+                  width: 150,
                   child: Image.asset(
-                "assets/images/Sleep-Graph.png",fit: BoxFit.cover,
-              )))
+                    "assets/images/Sleep-Graph.png",
+                    fit: BoxFit.cover,
+                  )))
         ],
       ),
     );

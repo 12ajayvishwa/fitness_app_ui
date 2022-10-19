@@ -1,7 +1,6 @@
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:fitness_ui/utils/text_style.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 InputDecoration inputDecoration(
   Color fillColor,

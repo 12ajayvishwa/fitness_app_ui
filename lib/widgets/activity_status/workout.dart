@@ -1,11 +1,8 @@
 import 'dart:math';
-
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:fl_chart/fl_chart.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 
 class WorkOutChart extends StatefulWidget {
   const WorkOutChart({Key? key}) : super(key: key);
@@ -18,7 +15,7 @@ class _WorkOutChartState extends State<WorkOutChart> {
   void startCreatingDemoData1() async {
     for (int i = 0; i < 7; i++) {
       if (i == 0) continue;
-      await Future.delayed((Duration(seconds: 1))).then((value) {
+      await Future.delayed((const Duration(seconds: 1))).then((value) {
         Random random = Random();
 
         flspots1.add(FlSpot(
@@ -34,7 +31,7 @@ class _WorkOutChartState extends State<WorkOutChart> {
   void startCreatingDemoData2() async {
     for (int i = 0; i < 7; i++) {
       if (i == 0) continue;
-      await Future.delayed((Duration(seconds: 1))).then((value) {
+      await Future.delayed((const Duration(seconds: 1))).then((value) {
         Random random = Random();
 
         flspots2.add(FlSpot(
