@@ -48,7 +48,7 @@ class _HomeState extends State<Home> {
   }
 
   customAppBar(Size size) {
-    return Container(
+    return SizedBox(
       height: size.height * 0.07,
       width: size.width,
       child: Row(
