@@ -9,7 +9,11 @@ class LatestWorkoutCard extends StatefulWidget {
   final String? image;
   final String? title;
   final num? caloriesBurn;
+  final Color? gradientColor1;
+  final Color? gradientColor2;
+  final Color? textColor;
   final String? time;
+  final double? percent;
   final VoidCallback? onTab;
   const LatestWorkoutCard(
       {Key? key,
@@ -18,7 +22,7 @@ class LatestWorkoutCard extends StatefulWidget {
       this.onTab,
       this.caloriesBurn,
       this.time,
-      required this.size})
+      required this.size, this.gradientColor1, this.gradientColor2, this.textColor, this.percent})
       : super(key: key);
 
   @override
@@ -36,25 +40,24 @@ class _LatestWorkoutCardState extends State<LatestWorkoutCard> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          Container(
+              height: 70,
+              width: 70,
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: LinearGradient(colors: [
+                    widget.gradientColor1!,
+                    widget.gradientColor2!
+                    // kBrandColor1.withOpacity(0.8),
+                    // kBrandColor2.withOpacity(0.8)
+                  ])),
+              child: SvgPicture.asset(
+                widget.image!,
+                height: 50,
+                width: 50,
+              )),
           Padding(
-            padding: const EdgeInsets.only(top: 15.0, bottom: 15, left: 25),
-            child: Container(
-                height: 70,
-                width: 70,
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    gradient: LinearGradient(colors: [
-                      kBrandColor1.withOpacity(0.8),
-                      kBrandColor2.withOpacity(0.8)
-                    ])),
-                child: SvgPicture.asset(
-                  widget.image!,
-                  height: 50,
-                  width: 50,
-                )),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 27),
+            padding: const EdgeInsets.only(right: 10),
             child: SizedBox(
               width: widget.size.width * 0.65,
               height: widget.size.height * 0.09,
@@ -65,8 +68,9 @@ class _LatestWorkoutCardState extends State<LatestWorkoutCard> {
                     top: 8,
                     left: 12,
                     child: Text(
-                      "Fullbody Workout",
-                      style: kSmallTextMedium(Colors.black),
+                      widget.title!,
+                      //"Fullbody Workout",
+                      style: kSmallTextMedium(widget.textColor!),
                     ),
                   ),
                   Positioned(
@@ -83,18 +87,18 @@ class _LatestWorkoutCardState extends State<LatestWorkoutCard> {
                           width: 1,
                           color: Colors.grey,
                         ),
-                        Text(" 20minutes",
+                        Text(widget.time!,
                             style:
                                 kCaptionTextRegular(const Color(0xFFA4A9AD))),
                       ],
                     ),
                   ),
-                  const Positioned(
+                  Positioned(
                       bottom: 0,
                       left: 7,
                       child: ProgressBar(
-                        percent: 0.8,
-                        width: 209,
+                        percent: widget.percent!,
+                        width: 180,
                         lineHeight: 10,
                         radius: 50,
                       )

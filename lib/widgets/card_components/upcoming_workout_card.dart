@@ -10,6 +10,10 @@ class UpcomingWorkoutCard extends StatelessWidget {
   final String? title;
   final DateTime? dateTime;
   final bool? status;
+  final Color? textColor;
+  final Color? gradientColor1;
+  final Color? gradientColor2;
+  
   final ValueChanged<bool> onChanged;
   const UpcomingWorkoutCard(
       {Key? key,
@@ -18,7 +22,7 @@ class UpcomingWorkoutCard extends StatelessWidget {
       this.dateTime,
       this.image,
       this.status,
-      required this.onChanged})
+      required this.onChanged, this.textColor, this.gradientColor1, this.gradientColor2})
       : super(key: key);
 
   @override
@@ -32,15 +36,15 @@ class UpcomingWorkoutCard extends StatelessWidget {
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Padding(
-            padding: const EdgeInsets.only(top: 15.0, bottom: 15, left: 25),
+            padding: const EdgeInsets.only(top: 15.0, bottom: 15, ),
             child: Container(
                 height: 70,
                 width: 70,
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     gradient: LinearGradient(colors: [
-                      kBrandColor1.withOpacity(0.8),
-                      kBrandColor2.withOpacity(0.8)
+                      gradientColor1!,
+                      gradientColor2!
                     ])),
                 child: SvgPicture.asset(
                   image!,
@@ -49,7 +53,7 @@ class UpcomingWorkoutCard extends StatelessWidget {
                 )),
           ),
           Padding(
-              padding: const EdgeInsets.only(right: 27),
+              padding: const EdgeInsets.only(right: 10),
               child: SizedBox(
                 width: size.width * 0.65,
                 height: size.height * 0.09,
@@ -60,8 +64,8 @@ class UpcomingWorkoutCard extends StatelessWidget {
                       top: 15,
                       left: 12,
                       child: Text(
-                        "Fullbody Workout",
-                        style: kSmallTextMedium(Colors.black),
+                        title!,
+                        style: kSmallTextMedium(textColor!),
                       ),
                     ),
                     Positioned(

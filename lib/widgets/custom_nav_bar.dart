@@ -24,7 +24,7 @@ class CustomBottomNavBar extends StatelessWidget {
       Container(
         height: size.height * 0.13,
         width: size.width,
-        color: Colors.transparent,
+        color: Colors.white,
       ),
       Positioned(
           bottom: 0,

@@ -16,8 +16,8 @@ class _CaloriesState extends State<Calories> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
-      width: 150,
+      height: widget.size.height*0.2,
+      width: widget.size.width*0.4,
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
@@ -62,23 +62,23 @@ class CaloriesProgressBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 66,
-      width: 66,
+      height: 76,
+      width: 76,
       child: GFProgressBar(
         circleWidth: 8,
         circleStartAngle: 180,
         animation: true,
         percentage: 0.6,
         animationDuration: 1500,
-        radius: 75,
+        radius: 85,
         progressHeadType: GFProgressHeadType.circular,
         type: GFProgressType.circular,
         backgroundColor: const Color(0xFFF7F8F8),
         linearGradient: const LinearGradient(
             colors: [Color(0xFFC58BF2), Color(0xFF92A3FD)]),
         child: Container(
-          height: 50,
-          width: 50,
+          height: 60,
+          width: 60,
           decoration: const BoxDecoration(
               shape: BoxShape.circle,
               gradient: LinearGradient(colors: [kBrandColor1, kBrandColor2])),

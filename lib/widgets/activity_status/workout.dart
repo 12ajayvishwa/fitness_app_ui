@@ -131,7 +131,7 @@ class _WorkOutChartState extends State<WorkOutChart> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-       height: size.height*0.35,
+       height: size.height*0.30,
       width: size.width*0.96,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),

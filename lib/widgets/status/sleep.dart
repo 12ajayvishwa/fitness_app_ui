@@ -3,13 +3,14 @@ import '../../utils/gradient_text_color.dart';
 import '../../utils/text_style.dart';
 
 class Sleep extends StatelessWidget {
-  const Sleep({Key? key}) : super(key: key);
+  final Size size;
+  const Sleep({Key? key, required this.size}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
-      width: 150,
+      height: size.height*0.2,
+      width: size.width*0.4,
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
@@ -44,8 +45,8 @@ class Sleep extends StatelessWidget {
           Positioned(
               bottom: 15,
               child: SizedBox(
-                  height: 65,
-                  width: 150,
+                  height: 75,
+                  width: 165,
                   child: Image.asset(
                     "assets/images/Sleep-Graph.png",
                     fit: BoxFit.cover,

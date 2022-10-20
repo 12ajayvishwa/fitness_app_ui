@@ -16,8 +16,8 @@ class _WaterIntakeState extends State<WaterIntake> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: 350,
-      width: 150,
+      height: size.height*0.45,
+      width: size.width*0.4,
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
