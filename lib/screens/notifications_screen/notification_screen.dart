@@ -76,10 +76,10 @@ class _NotificationsState extends State<Notifications> {
             Container(
               height: size.height * 0.12,
               width: size.width * 0.12,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   gradient:
-                      LinearGradient(colors: [kBrandColor1, kBrandColor2])),
+                      LinearGradient(colors: [kBrandColor1.withOpacity(0.4), kBrandColor2.withOpacity(0.4)])),
             ),
             const SizedBox(
               width: 10,
