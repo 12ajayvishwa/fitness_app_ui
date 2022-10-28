@@ -10,6 +10,8 @@ import 'package:fitness_ui/screens/onboarding_screen/welcome_screen.dart';
 import 'package:fitness_ui/screens/screen_not_found.dart';
 import 'package:flutter/material.dart';
 
+import '../screens/notifications_screen/notification_screen.dart';
+
 class CustomRouter{
   static Route<dynamic> generateRoute(RouteSettings settings){
     switch (settings.name){
@@ -29,6 +31,8 @@ class CustomRouter{
       return MaterialPageRoute(builder: (_) => const CompletedProfileScreen());
       case dashboardScreenRoute:
       return MaterialPageRoute(builder: (_) => const Dashboard());
+      case notificationsScreenRoute:
+      return MaterialPageRoute(builder: (_) => const Notifications());
       default:
       return MaterialPageRoute(builder: (_) => const ScreenNotFound());
       

@@ -1,7 +1,6 @@
 import 'package:fitness_ui/widgets/card_components/custom_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../utils/colors.dart';
 import '../../utils/text_style.dart';
 
 class UpcomingWorkoutCard extends StatelessWidget {

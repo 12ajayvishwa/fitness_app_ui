@@ -6,3 +6,4 @@ const String registration2ScreenRoute = 'registration2';
 const String loginScreenRoute = 'login';
 const String completedProfileScreenRoute = 'completeProfile';
 const String dashboardScreenRoute = 'dashboard';
+const String notificationsScreenRoute = 'notification';
