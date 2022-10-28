@@ -21,7 +21,9 @@ class _NotificationsState extends State<Notifications> {
           padding: const EdgeInsets.all(10.0),
           child: SmallContainer(
             icon: "assets/icons/light/Arrow - Left 2.svg",
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+            },
           ),
         ),
         actions: [
@@ -44,16 +46,24 @@ class _NotificationsState extends State<Notifications> {
               child: SizedBox(
                   height: size.height * 0.1,
                   width: size.width,
-                  child: notificationsList(size, "", "Hey, it’s time for lunch",
-                      "About 1 minutes ago", () {})),
+                  child: notificationsList(
+                      size,
+                      "assets/images/Food-Vector.svg",
+                      "Hey, it’s time for lunch",
+                      "About 1 minutes ago",
+                      () {})),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 10.0, right: 10.0),
               child: SizedBox(
                   height: size.height * 0.1,
                   width: size.width,
-                  child: notificationsList(size, "", "Hey, it’s time for lunch",
-                      "About 1 minutes ago", () {})),
+                  child: notificationsList(
+                      size,
+                      "assets/images/Train_Vector2.svg",
+                      "Don’t miss your lowerbody workout",
+                      "About 3 hours ago",
+                      () {})),
             ),
           ],
         ),
@@ -78,39 +88,52 @@ class _NotificationsState extends State<Notifications> {
               width: size.width * 0.12,
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  gradient:
-                      LinearGradient(colors: [kBrandColor1.withOpacity(0.4), kBrandColor2.withOpacity(0.4)])),
+                  gradient: LinearGradient(colors: [
+                    kBrandColor1.withOpacity(0.4),
+                    kBrandColor2.withOpacity(0.4)
+                  ])),
+              child: Center(
+                child: SvgPicture.asset(
+                  image,
+                  height: 25,
+                  width: 20,
+                ),
+              ),
             ),
             const SizedBox(
               width: 10,
             ),
             SizedBox(
               height: size.height * 0.16,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    title,
-                    style: const TextStyle(
-                        fontFamily: "Poppins",
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
-                        color: Color(0xFF1D1617)),
-                  ),
-                  Text(
-                    subtitle,
-                    style: const TextStyle(
-                        fontFamily: "Poppins",
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        color: kGrayColor1),
-                  )
-                ],
+              width: size.width * 0.55,
+              child: SizedBox(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(
+                          fontFamily: "Poppins",
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xFF1D1617)),
+                    ),
+                    Text(
+                      subtitle,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                          fontFamily: "Poppins",
+                          fontSize: 10,
+                          fontWeight: FontWeight.w400,
+                          color: kGrayColor1),
+                    )
+                  ],
+                ),
               ),
             ),
             const SizedBox(
-              width: 120,
+              width: 40,
             ),
             IconButton(
                 onPressed: onTap,
