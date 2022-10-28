@@ -7,6 +7,7 @@ import 'package:fitness_ui/widgets/status/calories.dart';
 import 'package:fitness_ui/widgets/status/sleep.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../../routes/custom_route.dart';
 import '../../widgets/activity_status/workout.dart';
 import '../../widgets/card_components/upcoming_workout_card.dart';
 import '../../widgets/status/heart_rate.dart';
@@ -218,32 +219,35 @@ class _HomeState extends State<Home> {
               )
             ],
           ),
-          Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: const Color(0xFFF7F8F8),
-                boxShadow: [
-                  BoxShadow(
-                      color: const Color(0xFF1D1617).withOpacity(0.07),
-                      offset: const Offset(0, 4),
-                      blurRadius: 2,
-                      spreadRadius: 2)
-                ]),
-            child: Stack(alignment: Alignment.center, children: [
-              SvgPicture.asset("assets/icons/bold/Bell-Icon.svg"),
-              Positioned(
-                top: 12,
-                right: 14,
-                child: Container(
-                  height: 4,
-                  width: 4,
-                  decoration: const BoxDecoration(
-                      shape: BoxShape.circle, color: kFaildColor),
-                ),
-              )
-            ]),
+          InkWell(
+            onTap: () => Navigator.pushNamed(context, notificationsScreenRoute),
+            child: Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  color: const Color(0xFFF7F8F8),
+                  boxShadow: [
+                    BoxShadow(
+                        color: const Color(0xFF1D1617).withOpacity(0.07),
+                        offset: const Offset(0, 4),
+                        blurRadius: 2,
+                        spreadRadius: 2)
+                  ]),
+              child: Stack(alignment: Alignment.center, children: [
+                SvgPicture.asset("assets/icons/bold/Bell-Icon.svg"),
+                Positioned(
+                  top: 12,
+                  right: 14,
+                  child: Container(
+                    height: 4,
+                    width: 4,
+                    decoration: const BoxDecoration(
+                        shape: BoxShape.circle, color: kFaildColor),
+                  ),
+                )
+              ]),
+            ),
           ),
         ],
       ),
