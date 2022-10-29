@@ -1,3 +1,4 @@
+import 'package:fitness_ui/screens/activity_tracker/activity_tracker.dart';
 import 'package:fitness_ui/screens/home/dashboard.dart';
 import 'package:fitness_ui/routes/custom_route.dart';
 import 'package:fitness_ui/screens/complete_profile/completed_profile_screen.dart';
@@ -33,6 +34,8 @@ class CustomRouter{
       return MaterialPageRoute(builder: (_) => const Dashboard());
       case notificationsScreenRoute:
       return MaterialPageRoute(builder: (_) => const Notifications());
+      case activityTrackerScreenRoute:
+      return MaterialPageRoute(builder: (_) => const ActivityTracker());
       default:
       return MaterialPageRoute(builder: (_) => const ScreenNotFound());
       

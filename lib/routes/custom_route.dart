@@ -7,3 +7,4 @@ const String loginScreenRoute = 'login';
 const String completedProfileScreenRoute = 'completeProfile';
 const String dashboardScreenRoute = 'dashboard';
 const String notificationsScreenRoute = 'notification';
+const String activityTrackerScreenRoute = 'activityTraker';

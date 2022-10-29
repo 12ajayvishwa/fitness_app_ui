@@ -48,13 +48,19 @@ class _HomeState extends State<Home> {
                               size: size,
                               title: "BMI (Body Mass Index)",
                               subTitle: "You have a normal weight",
-                              onTap: () {}),
+                              onTap: () {
+                               
+                              }),
                           const SizedBox(
                             height: 30,
                           ),
                           DailyAction(
                               title: "Today Target",
-                              onTab: () {},
+                              onTab: () {
+                                print("hhh");
+                                 Navigator.pushNamed(
+                                    context, activityTrackerScreenRoute);
+                              },
                               size: size,
                               buttonText: "Check"),
                           const SizedBox(

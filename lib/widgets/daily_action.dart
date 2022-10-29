@@ -47,16 +47,19 @@ class Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: size.height * 0.05,
-      width: size.width * 0.25,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50),
-          gradient: LinearGradient(
-              begin: Alignment.centerRight,
-              end: Alignment.centerLeft,
-              colors: [color2,color1])),
-      child: Center(child: Text(text, style: const TextStyle(fontFamily: "Poppins",fontSize: 14,fontWeight: FontWeight.w400,color: Colors.white,letterSpacing: 1,)),
-    ));
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        height: size.height * 0.05,
+        width: size.width * 0.25,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(50),
+            gradient: LinearGradient(
+                begin: Alignment.centerRight,
+                end: Alignment.centerLeft,
+                colors: [color2,color1])),
+        child: Center(child: Text(text, style: const TextStyle(fontFamily: "Poppins",fontSize: 14,fontWeight: FontWeight.w400,color: Colors.white,letterSpacing: 1,)),
+      )),
+    );
   }
 }

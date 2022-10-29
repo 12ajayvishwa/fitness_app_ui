@@ -19,7 +19,7 @@ class _ActivityChartState extends State<ActivityChart> {
         fontSize: 12,
         color: kGrayColor1);
     return Container(
-      height: widget.size.height * 0.35,
+      height: widget.size.height * 0.30,
       width: widget.size.width * 0.96,
       decoration: BoxDecoration(
           color: Colors.white,
@@ -27,15 +27,17 @@ class _ActivityChartState extends State<ActivityChart> {
           boxShadow: [
             BoxShadow(
                 color: const Color(0xFF1D1617).withOpacity(0.1),
+                offset: const Offset(0,2),
                 spreadRadius: 2,
-                blurRadius: 2)
+                blurRadius: 2),
+            
           ]),
       child: Stack(children: [
         Positioned(
           bottom: 10,
           left: 30,
           child: SizedBox(
-            height: widget.size.height * 0.05,
+            height: widget.size.height * 0.03,
             width: widget.size.width * 0.8,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -73,10 +75,10 @@ class _ActivityChartState extends State<ActivityChart> {
           ),
         ),
         Positioned(
-          bottom: 60,
+          bottom: 40,
           left: 30,
           child: SizedBox(
-            height: widget.size.height * 0.25,
+            height: widget.size.height * 0.22,
             width: widget.size.width * 0.8,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

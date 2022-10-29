@@ -15,6 +15,15 @@ class _NotificationsState extends State<Notifications> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
+        title: const Text(
+          "Notification",
+          style: TextStyle(
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w700,
+              fontSize: 16,
+              color: Colors.black),
+        ),
+        centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.transparent,
         leading: Padding(
@@ -177,7 +186,7 @@ class SmallContainer extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                   color: const Color(0xFF1D1617).withOpacity(0.07),
-                  offset: const Offset(0, 4),
+                  offset: const Offset(0, 2),
                   blurRadius: 2,
                   spreadRadius: 2)
             ]),
