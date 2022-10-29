@@ -65,6 +65,18 @@ class _NotificationsState extends State<Notifications> {
                       "About 3 hours ago",
                       () {})),
             ),
+            Padding(
+              padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+              child: SizedBox(
+                  height: size.height * 0.1,
+                  width: size.width,
+                  child: notificationsList(
+                      size,
+                      "assets/images/Train_Vector3.svg",
+                      "Hey, let’s add some meals for your b..",
+                      "29 May",
+                      () {})),
+            ),
           ],
         ),
       ),
