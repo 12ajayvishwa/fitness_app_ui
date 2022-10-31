@@ -63,8 +63,8 @@ class _ActivityTrackerState extends State<ActivityTracker> {
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-                offset: Offset(0, 4),
-                color: Color(0xFF1D1617).withOpacity(0.07),
+                offset: const Offset(0, 4),
+                color: const Color(0xFF1D1617).withOpacity(0.07),
                 blurRadius: 2,
                 spreadRadius: 2)
           ]),

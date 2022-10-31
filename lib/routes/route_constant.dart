@@ -8,6 +8,7 @@ import 'package:fitness_ui/screens/login_signup_screens/login_screen.dart';
 import 'package:fitness_ui/screens/login_signup_screens/signup_screen.dart';
 import 'package:fitness_ui/screens/onboarding_screen/onboarding_screen.dart';
 import 'package:fitness_ui/screens/onboarding_screen/welcome_screen.dart';
+import 'package:fitness_ui/screens/profile_screen/profile_screen.dart';
 import 'package:fitness_ui/screens/screen_not_found.dart';
 import 'package:flutter/material.dart';
 
@@ -36,6 +37,8 @@ class CustomRouter{
       return MaterialPageRoute(builder: (_) => const Notifications());
       case activityTrackerScreenRoute:
       return MaterialPageRoute(builder: (_) => const ActivityTracker());
+      case profileScreenRoute:
+      return MaterialPageRoute(builder: (_) => const ProfileScreen());
       default:
       return MaterialPageRoute(builder: (_) => const ScreenNotFound());
       

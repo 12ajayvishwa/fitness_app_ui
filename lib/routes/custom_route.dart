@@ -8,3 +8,4 @@ const String completedProfileScreenRoute = 'completeProfile';
 const String dashboardScreenRoute = 'dashboard';
 const String notificationsScreenRoute = 'notification';
 const String activityTrackerScreenRoute = 'activityTraker';
+const String profileScreenRoute = 'profileScreen';

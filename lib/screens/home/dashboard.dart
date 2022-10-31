@@ -4,6 +4,8 @@ import 'package:fitness_ui/widgets/custom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../profile_screen/profile_screen.dart';
+
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -21,7 +23,7 @@ class _DashboardState extends State<Dashboard> {
     const Home(),
     const Icon(Icons.ac_unit_outlined),
     const Icon(Icons.access_alarm),
-    const Icon(Icons.accessibility),
+    const ProfileScreen()
   ];
   @override
   Widget build(BuildContext context) {
