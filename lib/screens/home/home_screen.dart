@@ -57,6 +57,7 @@ class _HomeState extends State<Home> {
                           DailyAction(
                               title: "Today Target",
                               onTab: () {
+                                // ignore: avoid_print
                                 print("hhh");
                                  Navigator.pushNamed(
                                     context, activityTrackerScreenRoute);

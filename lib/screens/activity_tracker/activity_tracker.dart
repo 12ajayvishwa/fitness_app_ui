@@ -87,7 +87,7 @@ class _ActivityTrackerState extends State<ActivityTracker> {
           ),
           Positioned(
               left: 80,
-              child: Container(
+              child: SizedBox(
                 height: 55,
                 width: 190,
                 child: Column(
@@ -99,7 +99,7 @@ class _ActivityTrackerState extends State<ActivityTracker> {
                       style: kSmallTextMedium(Colors.black),
                     ),
                     Text(subtitle,
-                        style: kCaptionTextRegular(Color(0xFFA4A9AD))),
+                        style: kCaptionTextRegular(const Color(0xFFA4A9AD))),
                   ],
                 ),
               )),
