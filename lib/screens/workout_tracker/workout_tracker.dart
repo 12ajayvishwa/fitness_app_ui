@@ -1,6 +1,7 @@
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:fitness_ui/widgets/daily_action.dart';
 import 'package:flutter/material.dart';
+import '../../utils/text_style.dart';
 import '../../widgets/activity_status/workout_2.dart';
 import '../notifications_screen/notification_screen.dart';
 
@@ -78,18 +79,48 @@ class _WorkoutTrackerState extends State<WorkoutTracker> {
                             height: 5,
                             width: 50,
                             decoration: BoxDecoration(
-                                color:
-                                    const Color(0xFF1D1617).withOpacity(0.1),
+                                color: const Color(0xFF1D1617).withOpacity(0.1),
                                 borderRadius: BorderRadius.circular(25)),
                           ),
                         ),
                         Positioned(
-                          top: 50,
-                          left: 20,
-                          right: 20,
-                          child: DailyAction(title: "Daily Workout Schedule", onTab: (){}, size: size, buttonText: "Check"))
+                            top: 50,
+                            left: 20,
+                            right: 20,
+                            child: DailyAction(
+                                title: "Daily Workout Schedule",
+                                onTab: () {},
+                                size: size,
+                                buttonText: "Check"))
                       ]),
-                    ))
+                    )),
+                Positioned(
+                  top: 470,
+                  left: 20,
+                  right: 20,
+                  child: SizedBox(
+                    width: size.width,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Upcoming Workout",
+                          style: kLargeTextSemiBold(const Color(0xFF1D1617)),
+                        ),
+                        TextButton(
+                            onPressed: () {},
+                            child: const Text(
+                              "See more",
+                              style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                  color: kGrayColor2),
+                            ))
+                      ],
+                    ),
+                  ),
+                )
               ],
             )),
       ),
