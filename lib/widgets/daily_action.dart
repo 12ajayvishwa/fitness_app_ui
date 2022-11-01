@@ -11,7 +11,7 @@ class DailyAction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: size.height*0.1,
+      height: size.height*0.09,
       width: size.width*0.96,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),

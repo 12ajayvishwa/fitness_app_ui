@@ -9,3 +9,5 @@ const String dashboardScreenRoute = 'dashboard';
 const String notificationsScreenRoute = 'notification';
 const String activityTrackerScreenRoute = 'activityTraker';
 const String profileScreenRoute = 'profileScreen';
+const String congratulationScreenRoute = 'congratulationScreen';
+const String workoutTrackerScreenRoute = 'workoutTrackerScreen';
