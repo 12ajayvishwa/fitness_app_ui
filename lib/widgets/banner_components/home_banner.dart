@@ -9,8 +9,8 @@ class HomeBanner extends StatelessWidget {
 final Size size;
 final String? title;
 final String? subTitle;
-final VoidCallback? onTap;
-  const HomeBanner({Key? key, required this.size, this.title,this.subTitle, this.onTap}) : super(key: key);
+final VoidCallback onTap;
+  const HomeBanner({Key? key, required this.size, this.title,this.subTitle, required this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ final VoidCallback? onTap;
               Positioned(
                 bottom: 26,
                 left: 20,
-                child: SecondaryButton(size: size, text: "View More", onTap: (){print("hi");},color1: kSecondryColor1,color2: kSecondryColor2,))
+                child: SecondaryButton(size: size, text: "View More", onTap: onTap,color1: kSecondryColor1,color2: kSecondryColor2,))
       ]),
     );
   }
