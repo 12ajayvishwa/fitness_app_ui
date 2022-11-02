@@ -14,16 +14,19 @@ class SecondaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: size.height * 0.05,
-      width: size.width * 0.25,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50),
-          gradient: LinearGradient(
-              begin: Alignment.centerRight,
-              end: Alignment.centerLeft,
-              colors: [color2,color1])),
-      child: Center(child: Text(text, style: kCaptionTextSemiBold(Colors.white),)),
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        height: size.height * 0.05,
+        width: size.width * 0.25,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(50),
+            gradient: LinearGradient(
+                begin: Alignment.centerRight,
+                end: Alignment.centerLeft,
+                colors: [color2,color1])),
+        child: Center(child: Text(text, style: kCaptionTextSemiBold(Colors.white),)),
+      ),
     );
   }
 }

@@ -49,7 +49,7 @@ class _HomeState extends State<Home> {
                               title: "BMI (Body Mass Index)",
                               subTitle: "You have a normal weight",
                               onTap: () {
-                               
+                               Navigator.pushNamed(context, mealPlannerScreenRoute);
                               }),
                           const SizedBox(
                             height: 30,
