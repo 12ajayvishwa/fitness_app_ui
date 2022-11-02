@@ -1,5 +1,6 @@
 import 'package:fitness_ui/modal/category_model.dart';
 import 'package:fitness_ui/screens/meals/custom_text.dart';
+import 'package:fitness_ui/widgets/custom_appBAr.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -19,87 +20,89 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 10,),
-            customAppBar(),
-            SizedBox(height: 30,),
-            searchCard(),
-            SizedBox(height: 30,),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: CustomText(
-                  title: "Category",
-                  fontSize: 16,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w600),
-            ),
-           SizedBox(height: 15,),
-            categoryCard(),
-            SizedBox(height: 15,),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: CustomText(
-                  title: "Recommendation for Diet",
-                  fontSize: 16,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w600),
-            ),
-            SizedBox(height: 15,),
-            cakeCard(context),
-            SizedBox(height: 30,),
-            Padding(
-              padding: const EdgeInsets.only(left: 30),
-              child: CustomText(
-                  title: "Popular",
-                  fontSize: 16,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w600),
-            ),
-            SizedBox(height: 15,),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              margin: const EdgeInsets.symmetric(horizontal: 30),
-              height: 80,
-              width: double.maxFinite,
-              decoration: BoxDecoration(boxShadow: [
-                BoxShadow(
-                    offset: Offset(0, 3),
-                    blurRadius: 2.0,
-                    color: Colors.black.withOpacity(0.07),
-                    spreadRadius: 2)
-              ], color: Colors.white, borderRadius: BorderRadius.circular(15)),
-              child: Row(
-                children: [
-                  Image.asset(
-                    "assets/image/cake2.png",
-                    height: 46,
-                    width: 45,
-                  ),
-                  SizedBox(width: 20,),
-                  Expanded(
-                      child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      CustomText(
-                          title: "Blueberry Pancake",
-                          fontSize: 14,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500),
-                      CustomText(
-                          title: "Medium | 30mins | 230kCal",
-                          fontSize: 12,
-                          color: Colors.grey,
-                          fontWeight: FontWeight.w400)
-                    ],
-                  )),
-                  SvgPicture.asset("assets/image/arrowforward.svg")
-                ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 10,),
+              customAppBar(),
+              SizedBox(height: 30,),
+              searchCard(),
+              SizedBox(height: 30,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: CustomText(
+                    title: "Category",
+                    fontSize: 16,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w600),
               ),
-            )
-          ],
+             SizedBox(height: 15,),
+              categoryCard(),
+              SizedBox(height: 15,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: CustomText(
+                    title: "Recommendation for Diet",
+                    fontSize: 16,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w600),
+              ),
+              SizedBox(height: 15,),
+              cakeCard(context),
+              SizedBox(height: 30,),
+              Padding(
+                padding: const EdgeInsets.only(left: 30),
+                child: CustomText(
+                    title: "Popular",
+                    fontSize: 16,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w600),
+              ),
+              SizedBox(height: 15,),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                margin: const EdgeInsets.symmetric(horizontal: 30),
+                height: 80,
+                width: double.maxFinite,
+                decoration: BoxDecoration(boxShadow: [
+                  BoxShadow(
+                      offset: Offset(0, 3),
+                      blurRadius: 2.0,
+                      color: Colors.black.withOpacity(0.07),
+                      spreadRadius: 2)
+                ], color: Colors.white, borderRadius: BorderRadius.circular(15)),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      "assets/images/cake2.png",
+                      height: 46,
+                      width: 45,
+                    ),
+                    SizedBox(width: 20,),
+                    Expanded(
+                        child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CustomText(
+                            title: "Blueberry Pancake",
+                            fontSize: 14,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500),
+                        CustomText(
+                            title: "Medium | 30mins | 230kCal",
+                            fontSize: 12,
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w400)
+                      ],
+                    )),
+                    SvgPicture.asset("assets/image/arrowforward.svg")
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -128,7 +131,7 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
                 child: Column(
                   children: [
                     SizedBox(height: 30,),
-                    Image.asset("assets/image/cake2.png"),
+                    Image.asset("assets/images/cake2.png"),
                     SizedBox(height: 15,),
                     CustomText(
                         title: "Honey Pancake",
@@ -267,53 +270,8 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
   Container customAppBar() {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 30),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-            height: 32,
-            width: 32,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Colors.grey.shade100),
-            child: const Icon(
-              Icons.arrow_back_ios,
-              size: 10,
-              color: Colors.black,
-            ),
-          ),
-          CustomText(
-              title: "Breakfast",
-              fontSize: 16,
-              color: const Color(0xff1D1617),
-              fontWeight: FontWeight.w700),
-          Container(
-            height: 32,
-            width: 32,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Colors.grey.shade100),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: 4,
-                  width: 4,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle, color: Colors.black),
-                ),
-                SizedBox(width: 2,),
-                Container(
-                  height: 4,
-                  width: 4,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle, color: Colors.black),
-                )
-              ],
-            ),
-          ),
-        ],
-      ),
+      child: CustomAppBar(title: "Breakfast"),
+         
     );
   }
 }

@@ -11,18 +11,18 @@ class CategoryModel {
   static List<CategoryModel> categoryList = [
     CategoryModel(
         title: "Salad",
-        image: "assets/image/Layer1.png", 
+        image: "assets/images/Layer1.png", 
         color: Color(0xff9DCEFF).withOpacity(0.2)),
      CategoryModel(
         title: "cake", 
-        image: "assets/image/Layer2.png", 
+        image: "assets/images/Layer2.png", 
         color: Color(0xffEEA4CE).withOpacity(0.2)),
      CategoryModel(
-        title: "pie", image: "assets/image/Layer3.png", color: Color(0xff9DCEFF).withOpacity(0.2)),
+        title: "pie", image: "assets/images/Layer3.png", color: Color(0xff9DCEFF).withOpacity(0.2)),
      CategoryModel(
-        title: "Smoothies", image: "assets/image/Layer4.png", color: Color(0xffEEA4CE).withOpacity(0.2)),
+        title: "Smoothies", image: "assets/images/Layer4.png", color: Color(0xffEEA4CE).withOpacity(0.2)),
 
        CategoryModel(
-        title: "Smoothies", image: "assets/image/Layer4.png", color: Color(0xffEEA4CE).withOpacity(0.2))
+        title: "Smoothies", image: "assets/images/Layer4.png", color: Color(0xffEEA4CE).withOpacity(0.2))
   ];
 }

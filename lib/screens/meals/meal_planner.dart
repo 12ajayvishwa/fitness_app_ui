@@ -7,6 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../utils/buttons/custom_dropdown_button.dart';
 import '../../utils/colors.dart';
+import '../../widgets/custom_appBAr.dart';
 import '../notifications_screen/notification_screen.dart';
 
 class MealPlanner extends StatefulWidget {
@@ -31,29 +32,7 @@ class _MealPlannerState extends State<MealPlanner> {
                 top: 50,
                 left: 20,
                 right: 20,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SmallContainer(
-                      icon: "assets/icons/light/Arrow - Left 2.svg",
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                    ),
-                    const Text(
-                      "Meal Planner",
-                      style: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16,
-                          color: Colors.black),
-                    ),
-                    SmallContainer(
-                      icon: "assets/icons/light/dot 2.svg",
-                      onTap: () {},
-                    ),
-                  ],
-                ),
+                child: CustomAppBar(title: "Meal Planner",),
               ),
               Positioned(
                   top: 105,
