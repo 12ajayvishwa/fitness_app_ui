@@ -92,35 +92,41 @@ class _MealPlannerState extends State<MealPlanner> {
                   )),
               Positioned(top: size.height * 0.77, child: todayMeal(size)),
               Positioned(
-                  left: 20,
-                  right: 20,
+                  left: 0,
+                  right: 0,
                   top: size.height * 1.04,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        "Find Something to Eat",
-                        style: kLargeTextSemiBold(Colors.black),
+                      Padding(
+                        padding: const EdgeInsets.only(left:20.0),
+                        child: Text(
+                          
+                          "Find Something to Eat",
+                          
+                          style: kLargeTextSemiBold(Colors.black),
+                        ),
                       ),
-                      SizedBox(
+                     const SizedBox(
                         height: 10,
                       ),
                       SizedBox(
                         height: size.height * 0.22,
                         child: ListView.builder(
+                          padding: EdgeInsets.only(left: 20),
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (BuildContext context, index) {
                               return Padding(
-                                padding: const EdgeInsets.only(right: 15),
-                                child: Container(
+                                padding: const EdgeInsets.only(right: 15,),
+                                child: SizedBox(
                                   height: size.height * 0.22,
                                   width: size.width * 0.5,
                                   child: Stack(children: [
                                     Container(
                                       decoration: BoxDecoration(
-                                          color: Color(0xff9DCEFF)
+                                          color: const Color(0xff9DCEFF)
                                               .withOpacity(0.2),
-                                          borderRadius: BorderRadius.only(
+                                          borderRadius: const BorderRadius.only(
                                               topLeft: Radius.circular(20),
                                               bottomLeft: Radius.circular(20),
                                               bottomRight: Radius.circular(20),
@@ -172,7 +178,7 @@ class _MealPlannerState extends State<MealPlanner> {
   Container todayMeal(Size size) {
     return Container(
       padding: EdgeInsets.symmetric(
-        horizontal: 30,
+        horizontal: 20,
       ),
       height: size.height * 0.28,
       width: size.width,
