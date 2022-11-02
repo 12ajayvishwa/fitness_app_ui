@@ -7,6 +7,7 @@ import 'package:fitness_ui/screens/complete_profile/registration_1.dart';
 import 'package:fitness_ui/screens/complete_profile/registration_2.dart';
 import 'package:fitness_ui/screens/login_signup_screens/login_screen.dart';
 import 'package:fitness_ui/screens/login_signup_screens/signup_screen.dart';
+import 'package:fitness_ui/screens/meals/meal_planner.dart';
 import 'package:fitness_ui/screens/onboarding_screen/onboarding_screen.dart';
 import 'package:fitness_ui/screens/onboarding_screen/welcome_screen.dart';
 import 'package:fitness_ui/screens/profile_screen/profile_screen.dart';
@@ -45,6 +46,8 @@ class CustomRouter{
       return MaterialPageRoute(builder: (_) => const CongratulationScreen());
       case workoutTrackerScreenRoute:
       return MaterialPageRoute(builder: (_) => const WorkoutTracker());
+      case mealPlannerScreenRoute:
+      return MaterialPageRoute(builder: (_) => const MealPlanner());
       default:
       return MaterialPageRoute(builder: (_) => const ScreenNotFound());
       

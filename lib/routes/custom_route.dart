@@ -11,3 +11,4 @@ const String activityTrackerScreenRoute = 'activityTraker';
 const String profileScreenRoute = 'profileScreen';
 const String congratulationScreenRoute = 'congratulationScreen';
 const String workoutTrackerScreenRoute = 'workoutTrackerScreen';
+const String mealPlannerScreenRoute = 'mealPlannerScreen';
