@@ -1,6 +1,5 @@
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:fitness_ui/utils/gradient_text_color.dart';
-import 'package:fitness_ui/widgets/banner_components/today_target_banner.dart';
 import 'package:fitness_ui/widgets/card_components/custom_switch.dart';
 import 'package:fitness_ui/widgets/daily_action.dart';
 import 'package:flutter/material.dart';
@@ -114,6 +113,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       accountSectionRow(
                           "assets/icons/light/Message.svg", "Contact Us",
                           () {
+                        // ignore: avoid_print
                         print("hi");
                       }),
                       accountSectionRow("assets/icons/light/Shield Done.svg",

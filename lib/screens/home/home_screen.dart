@@ -53,7 +53,7 @@ class _HomeState extends State<Home> {
                               }),
                           const SizedBox(
                             height: 30,
-                          ),
+                          ), 
                           DailyAction(
                               title: "Today Target",
                               onTab: () {
@@ -119,7 +119,9 @@ class _HomeState extends State<Home> {
                                         const Color(0xFF1D1617)),
                                   ),
                                   TextButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.pushNamed(context, workoutTrackerScreenRoute);
+                                      },
                                       child: const Text(
                                         "See more",
                                         style: TextStyle(

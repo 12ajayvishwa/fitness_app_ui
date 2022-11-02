@@ -3,6 +3,7 @@ import 'package:fitness_ui/widgets/daily_action.dart';
 import 'package:flutter/material.dart';
 import '../../utils/text_style.dart';
 import '../../widgets/activity_status/workout_2.dart';
+import '../../widgets/card_components/upcoming_workout_card.dart';
 import '../notifications_screen/notification_screen.dart';
 
 class WorkoutTracker extends StatefulWidget {
@@ -13,6 +14,7 @@ class WorkoutTracker extends StatefulWidget {
 }
 
 class _WorkoutTrackerState extends State<WorkoutTracker> {
+  bool switchbutton = true;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -120,7 +122,60 @@ class _WorkoutTrackerState extends State<WorkoutTracker> {
                       ],
                     ),
                   ),
-                )
+                ),
+                Positioned(
+                    top: size.height * 0.65,
+                    left: 20,
+                    right: 20,
+                    child: Column(
+                      children: [
+                        UpcomingWorkoutCard(
+                          size: size,
+                          title: "Fullbody Workout",
+                          dateTime: DateTime.now(),
+                          image: "assets/images/Workout-Pic.svg",
+                          textColor: Colors.black,
+                          gradientColor1: kSecondryColor1.withOpacity(0.8),
+                          gradientColor2: kSecondryColor2.withOpacity(0.8),
+                          status: true,
+                          onChanged: (v) {
+                            setState(() {
+                              switchbutton = v;
+                            });
+                          },
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        UpcomingWorkoutCard(
+                          size: size,
+                          title: "Lowerbody Workout",
+                          dateTime: DateTime.now(),
+                          image: "assets/images/Workout-Pic1.svg",
+                          textColor: kGrayColor1,
+                          gradientColor1: kBrandColor1.withOpacity(0.8),
+                          gradientColor2: kBrandColor2.withOpacity(0.8),
+                          status: false,
+                          onChanged: (v) {
+                            setState(() {
+                              switchbutton = v;
+                            });
+                          },
+                        ),
+                      ],
+                    )),
+                Positioned(
+                    top: size.height * 0.95,
+                    left: 20,
+                    right: 20,
+                    child:const  Text(
+                      "What Do You Want to Train",
+                      style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
+                          color: Colors.black),
+                    ))
               ],
             )),
       ),
