@@ -1,7 +1,6 @@
 import 'package:fitness_ui/widgets/card_components/custom_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../utils/colors.dart';
 import '../../utils/text_style.dart';
 
 class UpcomingWorkoutCard extends StatelessWidget {
@@ -32,11 +31,17 @@ class UpcomingWorkoutCard extends StatelessWidget {
         width: size.width * 0.98,
         decoration: BoxDecoration(
           color: Colors.white,
+          boxShadow: [BoxShadow(
+            color: const Color(0xFF1D1617).withOpacity(0.07),
+            offset: const Offset(0, 2),
+            spreadRadius: 2,
+            blurRadius: 2
+          )],
           borderRadius: BorderRadius.circular(16)),
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Padding(
-            padding: const EdgeInsets.only(top: 15.0, bottom: 15, ),
+            padding: const EdgeInsets.only(top: 15.0, bottom: 15,left: 10 ),
             child: Container(
                 height: 70,
                 width: 70,

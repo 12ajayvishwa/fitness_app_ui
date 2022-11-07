@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 double sizeH1 = 26; 
@@ -86,6 +88,16 @@ var kCaptionTextMedium = TextStyle(fontFamily: "Poppins",fontSize: captionTextSi
 kCaptionTextRegular(Color color){
   return TextStyle(fontFamily: "Poppins",fontSize: captionTextSize,color: color);
 }
+
+kSmallTextSubMedium(Color color){
+  return TextStyle(fontFamily: "Poppins",fontSize: smallTextSize,fontWeight: FontWeight.w500);
+}
+
+kText12W400(Color color){
+  return TextStyle(fontFamily: "Poppins",fontSize: 12,fontWeight: FontWeight.w400,color: color);
+}
+
+
 
 
 

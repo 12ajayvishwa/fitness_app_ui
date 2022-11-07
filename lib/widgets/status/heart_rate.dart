@@ -1,4 +1,3 @@
-import 'package:chart_sparkline/chart_sparkline.dart';
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:fitness_ui/utils/gradient_text_color.dart';
 import 'package:fitness_ui/utils/text_style.dart';
@@ -59,7 +58,7 @@ class _HeartRateState extends State<HeartRate> {
                 
                 axisLineColor: Colors.transparent,
                 color: kBrandColor2,
-                trackball: SparkChartTrackball(
+                trackball: const SparkChartTrackball(
                   width: 0,
                   color: Colors.transparent,
                   shouldAlwaysShow: true,
