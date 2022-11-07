@@ -12,7 +12,8 @@ class AnimatedIndicator extends StatefulWidget {
       {Key? key,
       required this.duration,
       required this.size,
-      required this.callback, required this.curveSize})
+      required this.callback,
+      required this.curveSize})
       : super(key: key);
 
   @override
