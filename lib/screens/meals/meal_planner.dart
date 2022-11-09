@@ -61,6 +61,8 @@ class _MealPlannerState extends State<MealPlanner> {
                     decoration: BoxDecoration(
                         color: Color(0xff9DCEFF).withOpacity(0.2),
                         borderRadius: BorderRadius.circular(15)),
+                    height: size.height * 0.1,
+                    width: size.width,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -69,12 +71,10 @@ class _MealPlannerState extends State<MealPlanner> {
                             size: size,
                             text: "Check",
                             onTap: () {},
-                            color1: Color(0xff9DCEFF),
+                            color1: const Color(0xff9DCEFF),
                             color2: const Color(0xff92A3FD))
                       ],
                     ),
-                    height: size.height * 0.1,
-                    width: size.width,
                   )),
               Positioned(
                   top: size.height * 0.68,

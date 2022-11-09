@@ -6,7 +6,6 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-
 class BreakFastScreen extends StatefulWidget {
   const BreakFastScreen({Key? key}) : super(key: key);
 
@@ -15,7 +14,7 @@ class BreakFastScreen extends StatefulWidget {
 }
 
 class _BreakFastScreenState extends State<BreakFastScreen> {
-  int selectCard=0;
+  int selectCard = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,11 +23,17 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               customAppBar(),
-              SizedBox(height: 30,),
+              SizedBox(
+                height: 30,
+              ),
               searchCard(),
-              SizedBox(height: 30,),
+              SizedBox(
+                height: 30,
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: CustomText(
@@ -37,9 +42,13 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
                     color: Colors.black,
                     fontWeight: FontWeight.w600),
               ),
-             SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               categoryCard(),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: CustomText(
@@ -48,9 +57,13 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
                     color: Colors.black,
                     fontWeight: FontWeight.w600),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               cakeCard(context),
-              SizedBox(height: 30,),
+              SizedBox(
+                height: 30,
+              ),
               Padding(
                 padding: const EdgeInsets.only(left: 30),
                 child: CustomText(
@@ -59,19 +72,24 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
                     color: Colors.black,
                     fontWeight: FontWeight.w600),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 margin: const EdgeInsets.symmetric(horizontal: 30),
                 height: 80,
                 width: double.maxFinite,
-                decoration: BoxDecoration(boxShadow: [
-                  BoxShadow(
-                      offset: Offset(0, 3),
-                      blurRadius: 2.0,
-                      color: Colors.black.withOpacity(0.07),
-                      spreadRadius: 2)
-                ], color: Colors.white, borderRadius: BorderRadius.circular(15)),
+                decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                          offset: Offset(0, 3),
+                          blurRadius: 2.0,
+                          color: Colors.black.withOpacity(0.07),
+                          spreadRadius: 2)
+                    ],
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15)),
                 child: Row(
                   children: [
                     Image.asset(
@@ -79,7 +97,9 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
                       height: 46,
                       width: 45,
                     ),
-                    SizedBox(width: 20,),
+                    SizedBox(
+                      width: 20,
+                    ),
                     Expanded(
                         child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -97,7 +117,7 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
                             fontWeight: FontWeight.w400)
                       ],
                     )),
-                    SvgPicture.asset("assets/image/arrowforward.svg")
+                    SvgPicture.asset("assets/images/arrowforward.svg")
                   ],
                 ),
               )
@@ -109,7 +129,6 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
   }
 
   SizedBox cakeCard(BuildContext context) {
-
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.3,
       child: ListView.builder(
@@ -118,9 +137,7 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
           scrollDirection: Axis.horizontal,
           itemBuilder: (BuildContext context, index) {
             return InkWell(
-              onTap: () {
-               
-              },
+              onTap: () {},
               child: Container(
                 margin: EdgeInsets.only(right: 10),
                 height: MediaQuery.of(context).size.height * 0.3,
@@ -130,9 +147,13 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
                     borderRadius: BorderRadius.circular(20)),
                 child: Column(
                   children: [
-                    SizedBox(height: 30,),
+                    SizedBox(
+                      height: 30,
+                    ),
                     Image.asset("assets/images/cake2.png"),
-                    SizedBox(height: 15,),
+                    SizedBox(
+                      height: 15,
+                    ),
                     CustomText(
                         title: "Honey Pancake",
                         fontSize: 14,
@@ -143,7 +164,9 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
                         fontSize: 12,
                         color: Color(0xff7B6F72),
                         fontWeight: FontWeight.w400),
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     selectCard == index
                         ? Container(
                             decoration: BoxDecoration(
@@ -199,7 +222,9 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
                     borderRadius: BorderRadius.circular(15)),
                 child: Column(
                   children: [
-                    SizedBox(height: 15,),
+                    SizedBox(
+                      height: 15,
+                    ),
                     Container(
                       height: 40,
                       width: 40,
@@ -208,7 +233,9 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
                       child:
                           Image.asset(CategoryModel.categoryList[index].image),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     CustomText(
                         title: CategoryModel.categoryList[index].title,
                         fontSize: 12,
@@ -257,11 +284,15 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
             "|",
             style: TextStyle(fontSize: 24, color: Color(0xffDDDADA)),
           ),
-          SizedBox(width: 10,),
+          SizedBox(
+            width: 10,
+          ),
           Container(
             child: Icon(Icons.tune),
           ),
-          SizedBox(width: 10,)
+          SizedBox(
+            width: 10,
+          )
         ],
       ),
     );
@@ -271,7 +302,6 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 30),
       child: CustomAppBar(title: "Breakfast"),
-         
     );
   }
 }

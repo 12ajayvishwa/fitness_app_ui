@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Fitness',
       onGenerateRoute: CustomRouter.generateRoute,
-      initialRoute: breakFastScreenRoute,
+      initialRoute: welcomeScreenRoute,
     );
   }
 }
