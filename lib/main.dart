@@ -1,8 +1,8 @@
 import 'package:fitness_ui/routes/custom_route.dart';
 import 'package:fitness_ui/routes/route_constant.dart';
 import 'package:flutter/material.dart';
-
-void main() {
+ 
+ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
